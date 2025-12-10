@@ -1,6 +1,6 @@
 # Industry Salon Website
 
-Clean static site scaffold for a salon.
+Clean static site scaffold for a Industry Salon
 
 ## Structure
 - `index.html` — Home
