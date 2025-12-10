@@ -1,0 +1,474 @@
+<!-- =============================================================
+DEVELOPER INFORMATION
+-------------------------------------------------------------
+Developed by: Max Eldabbas
+Email: maxeldabbas86@gmail.com
+Website/Portfolio:
+GitHub: www.github.com/maxeld1
+Date Created:
+License: Proprietary — Not for redistribution without permission.
+-------------------------------------------------------------
+
+
+SALON WEBSITE TEMPLATE — CONFIGURATION NOTES
+-------------------------------------------------------------
+
+BRAND INFO
+- Salon Name: "Industry Salon"
+- Tagline: Short phrase that fits your brand
+- Logo: Replace the colored square with your SVG or image
+
+
+CONTACT INFO
+- Phone:
+- Email:
+- Address:
+
+
+HOURS
+- Example: Mon–Fri 9–7, Sat 9–4
+- Update in both HTML + JSON-LD metadata
+
+
+SEO + METADATA
+- Update <title>, <meta name="description">, and Open Graph tags
+- Update JSON-LD LocalBusiness Schema (name, phone, address, social links)
+
+
+BOOKING INTEGRATION
+- Replace modal button link with real booking link
+- OR integrate API from Square, GlossGenius, Fresha, Acuity, or custom
+
+
+IMAGES
+- Replace Unsplash placeholders with actual salon & stylist photos
+- Keep file sizes optimized (150–200 KB for page speed)
+
+
+STYLISTS
+- Replace names, roles, specialties, and images
+- Update booking buttons to link to each stylist’s booking profile
+
+
+SERVICES + PRICING
+- Customize service descriptions
+- Adjust prices, categories, and formatting
+
+
+OPTIONAL ENHANCEMENTS
+- Add a reviews widget (Google Places API or trusted third party)
+- Add a full services page
+- Add an accessibility statement
+- Add a privacy page
+
+
+============================================================= -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salon Name – Hair • Beauty • Nails</title>
+  <meta name="description" content="[Salon Name] is a modern salon offering cuts, color, blowouts, nails and skincare in [City]. Book online or call [Phone]." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Salon Name – Hair • Beauty • Nails" />
+  <meta property="og:description" content="Modern salon in [City]. Book online or call [Phone]." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+  <!-- JSON-LD Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "Industry Salon",
+      "image": "https://example.com/og-image.jpg",
+      "telephone": "+1-555-555-5555",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Your City",
+        "addressRegion": "PA",
+        "postalCode": "19000",
+        "addressCountry": "US"
+      },
+      "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-16:00"],
+      "url": "https://example.com",
+      "sameAs": ["https://instagram.com/yourhandle"]
+    }
+  </script>
+
+  <style>
+    /* ===== CSS FRAMEWORK (vanilla, no libs) ===== */
+    :root{
+      --bg: #0b0f14;
+      --panel: #0f172a;
+      --muted: #64748b;
+      --text: #e5e7eb;
+      --brand: #e879f9; /* orchid */
+      --brand-2: #38bdf8; /* sky */
+      --accent: #fcd34d; /* gold */
+      --ring: #94a3b8;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.22);
+      --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;height:100%;}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background: linear-gradient(180deg,var(--bg),#0e141b); color: var(--text);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid transparent;padding:.9rem 1.1rem;border-radius:calc(var(--radius) - 6px);font-weight:650;cursor:pointer;transition:.25s ease;}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0b0b;}
+    .btn-primary:hover{transform:translateY(-1px);filter:saturate(1.1)}
+    .btn-ghost{border-color:#223042;background:#12202f;color:#dbeafe}
+    .btn-ghost:hover{background:#1a2a3b}
+
+    /* Utility */
+    .grid{display:grid;gap:22px}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width: 900px){.two,.three{grid-template-columns:1fr}}
+    .section{padding:72px 0}
+    .card{background:linear-gradient(180deg,#0f172a,#0a1220);border:1px solid #18253a;border-radius:var(--radius);box-shadow:var(--shadow);}
+    .card.pad{padding:26px}
+    .pill{display:inline-block;padding:.4rem .75rem;border-radius:999px;border:1px solid #1f2d42;color:#b6c2d9;background:#0c1523}
+    .muted{color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(13,19,28,.8);backdrop-filter: blur(10px);border-bottom:1px solid #18253a}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand .logo{width:36px;height:36px;border-radius:9px;background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand-2));box-shadow:0 0 40px rgba(232,121,249,.25)}
+    .nav a{opacity:.9}
+    .nav a:hover{opacity:1}
+    .nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    .mobile-toggle{display:none}
+    @media (max-width:800px){
+      .nav ul{display:none}
+      .mobile-toggle{display:inline-flex}
+      .nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;top:60px;right:0;background:#0d1623;border-top:1px solid #1c2a40;padding:18px}
+    }
+
+    /* Hero */
+    .hero{padding:90px 0 40px}
+    .hero .wrap{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:center}
+    .hero h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.04;margin:0}
+    .hero p{font-size:clamp(1rem,1.6vw,1.1rem);color:#c9d3e1}
+    .hero .media{position:relative;}
+    .hero .media .frame{border-radius:20px;overflow:hidden;border:1px solid #1e2d45;transform:rotate(-2deg);}
+    .hero .media::after{content:"";position:absolute;inset:-10px;z-index:-1;border-radius:28px;background:conic-gradient(from 30deg,var(--brand),var(--brand-2),var(--accent),var(--brand));filter:blur(30px);opacity:.25}
+    @media (max-width:1000px){.hero .wrap{grid-template-columns:1fr}}
+
+    /* Services */
+    .service{display:flex;gap:16px;align-items:flex-start}
+    .service .icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#12263f,#0d1b2e);display:grid;place-items:center;border:1px solid #1f2e46}
+
+    /* Pricing */
+    .price-card h3{margin:0 0 6px}
+    .price-row{display:flex;justify-content:space-between;border-bottom:1px dashed #22324b;padding:10px 0}
+
+    /* Gallery */
+    .gallery{columns: 3 220px; column-gap: 16px}
+    .gallery img{width:100%;border-radius:14px;margin:0 0 16px;border:1px solid #1f2f49}
+
+    /* Testimonials */
+    .quote{font-style:italic;color:#d0d9e6}
+
+    /* Footer */
+    footer{border-top:1px solid #1a2940;background:#0c1422;padding:36px 0;color:#c2ccdb}
+    footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
+    @media (max-width:800px){footer .cols{grid-template-columns:1fr}}
+
+    /* Modal */
+    dialog{max-width:680px;width:100%;border:none;border-radius:18px;background:#0e1828;color:var(--text);box-shadow:var(--shadow)}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e2f4b;padding:16px 20px}
+    .modal-body{padding:20px}
+    .close-x{background:none;border:none;font-size:22px;color:#9fb3cc;cursor:pointer}
+  </style>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- ===== HEADER / NAV ===== -->
+<header>
+  <div class="container nav" id="nav">
+    <a class="brand" href="#">
+      <span class="logo" aria-hidden="true"></span>
+      <strong>Salon Name</strong>
+    </a>
+    <nav aria-label="Primary">
+      <button class="mobile-toggle btn btn-ghost" aria-expanded="false" aria-controls="menu" id="navToggle">Menu</button>
+      <ul id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#stylists">Stylists</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn-primary" data-open="bookingModal">Book Now</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container wrap">
+    <div>
+      <span class="pill">Award‑winning • Woman‑owned • Downtown</span>
+      <h1>Cut. Color. Care. <br/>A salon experience that feels like you.</h1>
+      <p>From lived‑in color to precision cuts, our stylists craft looks that last. New guest packages available — come as you are, leave as your favorite self.</p>
+      <div style="display:flex; gap:12px; margin-top:16px">
+        <button class="btn btn-primary" data-open="bookingModal">Book an Appointment</button>
+        <a class="btn btn-ghost" href="#services">See Services</a>
+      </div>
+      <p class="muted" style="margin-top:10px">📍 123 Main St, Your City • ✆ (555) 555‑5555</p>
+    </div>
+    <div class="media">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1600&auto=format&fit=crop" alt="Stylist blow‑drying a client's hair in a modern salon" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Signature Services</h2>
+      <p class="muted">Need‑to‑know highlights. Link each card to a detailed service page later.</p>
+      <div class="grid three" style="margin-top:22px">
+        <article class="card pad service">
+          <div class="icon" aria-hidden="true">✂️</div>
+          <div>
+            <h3>Precision Cuts</h3>
+            <p class="muted">Tailored cuts for all hair types. Includes cleanse, scalp massage, and style.</p>
+          </div>
+        </article>
+        <article class="card pad service">
+          <div class="icon" aria-hidden="true">🎨</div>
+          <div>
+            <h3>Color & Blonding</h3>
+            <p class="muted">Lived‑in color, balayage, glossing and gray blending with bond‑building care.</p>
+          </div>
+        </article>
+        <article class="card pad service">
+          <div class="icon" aria-hidden="true">💅</div>
+          <div>
+            <h3>Nails & Care</h3>
+            <p class="muted">Manis, pedis and strengthening treatments with clean, long‑wear finishes.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STYLISTS ===== -->
+  <section id="stylists" class="section">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <p class="muted">Add headshots, specialties, and booking links per stylist.</p>
+      <div class="grid three" style="margin-top:22px">
+        <article class="card pad">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Stylist Ava" style="border-radius:10px; margin-bottom:12px" />
+          <h3>Ava Park — Master Colorist</h3>
+          <p class="muted">Dimensional blondes • lived‑in brunettes • corrective color</p>
+          <button class="btn btn-ghost" data-open="bookingModal">Book Ava</button>
+        </article>
+        <article class="card pad">
+          <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1200&auto=format&fit=crop" alt="Stylist Jordan" style="border-radius:10px; margin-bottom:12px" />
+          <h3>Jordan Lee — Cutter</h3>
+          <p class="muted">Curly cuts • shags • bobs • gender‑affirming styles</p>
+          <button class="btn btn-ghost" data-open="bookingModal">Book Jordan</button>
+        </article>
+        <article class="card pad">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="Nail tech Riley" style="border-radius:10px; margin-bottom:12px" />
+          <h3>Riley Chen — Nail Artist</h3>
+          <p class="muted">Structured manis • gel overlay • minimalist nail art</p>
+          <button class="btn btn-ghost" data-open="bookingModal">Book Riley</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Pricing</h2>
+      <p class="muted">Transparent, gender‑neutral pricing. Update as needed.</p>
+      <div class="grid three" style="margin-top:22px">
+        <article class="card pad price-card">
+          <h3>Hair</h3>
+          <div class="price-row"><span>Cut & Style</span><strong>$65–$95</strong></div>
+          <div class="price-row"><span>Blowout</span><strong>$40–$55</strong></div>
+          <div class="price-row"><span>Gloss/Toner</span><strong>$45</strong></div>
+          <div class="price-row"><span>Balayage</span><strong>$150+</strong></div>
+        </article>
+        <article class="card pad price-card">
+          <h3>Color</h3>
+          <div class="price-row"><span>Single Process</span><strong>$85</strong></div>
+          <div class="price-row"><span>Highlights (Partial)</span><strong>$140</strong></div>
+          <div class="price-row"><span>Highlights (Full)</span><strong>$185</strong></div>
+          <div class="price-row"><span>Corrective (per hr)</span><strong>$110</strong></div>
+        </article>
+        <article class="card pad price-card">
+          <h3>Nails</h3>
+          <div class="price-row"><span>Manicure</span><strong>$30</strong></div>
+          <div class="price-row"><span>Gel Manicure</span><strong>$45</strong></div>
+          <div class="price-row"><span>Pedicure</span><strong>$55</strong></div>
+          <div class="price-row"><span>Gel Overlay</span><strong>$60</strong></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Before & After</h2>
+      <p class="muted">Drop in Instagram shots or upload your own.</p>
+      <div class="gallery" aria-label="Client looks gallery">
+        <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?q=80&w=1200&auto=format&fit=crop" alt="Soft blonde highlights" />
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Textured bob haircut" />
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop" alt="Glossy brunette waves" />
+        <img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1200&auto=format&fit=crop" alt="Pastel nail art" />
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="Curly cut before/after" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2>What Clients Say</h2>
+      <div class="grid two" style="margin-top:22px">
+        <article class="card pad">
+          <p class="quote">“Best balayage I’ve ever had. My hair feels healthier than when I walked in.”</p>
+          <p class="muted">— Jamie R.</p>
+        </article>
+        <article class="card pad">
+          <p class="quote">“Super inclusive vibes and gender‑neutral pricing. I finally found my salon.”</p>
+          <p class="muted">— Alex P.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / MAP ===== -->
+  <section id="contact" class="section">
+    <div class="container grid two">
+      <div>
+        <h2>Visit Us</h2>
+        <p>123 Main St, Your City, PA 19000</p>
+        <p>Call <a href="tel:+15555555555">(555) 555‑5555</a> or email <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p class="muted">Open Mon–Fri 9–7, Sat 9–4</p>
+        <div style="display:flex;gap:12px;margin-top:14px">
+          <button class="btn btn-primary" data-open="bookingModal">Book Now</button>
+          <a class="btn btn-ghost" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="card" style="overflow:hidden">
+        <!-- Swap this static map with an embedded map later -->
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=640x400&maptype=roadmap&markers=color:purple%7CNew+York,NY" alt="Map to the salon" />
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container cols">
+    <div>
+      <strong>Salon Name</strong>
+      <p class="muted">Hair • Beauty • Nails in [City]. Sustainable, inclusive care for every texture.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <form id="newsletter" aria-label="Subscribe to newsletter">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid #1f2d42;background:#0b1422;color:var(--text);margin-bottom:8px" />
+        <button class="btn btn-ghost" type="submit">Subscribe</button>
+        <p class="muted" id="newsletterStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+  <div class="container" style="margin-top:22px;color:#8fa2b8">© <span id="year"></span> Salon Name. All rights reserved.</div>
+</footer>
+
+<!-- ===== BOOKING MODAL (placeholder) ===== -->
+<dialog id="bookingModal" aria-labelledby="bookingTitle">
+  <div class="modal-head">
+    <h3 id="bookingTitle">Book an Appointment</h3>
+    <button class="close-x" data-close>&times;<span class="sr-only">Close</span></button>
+  </div>
+  <div class="modal-body">
+    <p class="muted">Plug in your booking provider (Fresha, Square, GlossGenius, Acuity, or your custom API). For now, this button can just link out.</p>
+    <div style="display:flex;gap:12px;margin-top:10px">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Open Booking</a>
+      <button class="btn btn-ghost" data-close>Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // ===== Small JS helpers (no frameworks) =====
+  const $ = (sel, ctx=document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+  // Mobile nav toggle
+  const nav = $('#nav');
+  const navToggle = $('#navToggle');
+  if (navToggle){
+    navToggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // Modal open/close
+  $$('[data-open]').forEach(btn => btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-open');
+    const dlg = document.getElementById(id);
+    if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+  }));
+  $$('[data-close]').forEach(btn => btn.addEventListener('click', () => {
+    const dlg = btn.closest('dialog');
+    if (dlg) dlg.close();
+  }));
+
+  // Newsletter (demo only) — replace with your real endpoint
+  const form = $('#newsletter');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const status = $('#newsletterStatus');
+    status.textContent = 'Thanks! Please check your inbox to confirm.';
+    form.reset();
+  });
+
+  // Year
+  $('#year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
