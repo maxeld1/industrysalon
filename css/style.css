@@ -1,0 +1,38 @@
+/* ---------- Base Styles (css/style.css) ---------- */
+:root{
+  --bg:#0b0f14; --panel:#0f172a; --text:#e5e7eb; --muted:#9fb3cc;
+  --brand:#e879f9; --brand2:#38bdf8; --radius:14px; --maxw:1200px;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+     background:linear-gradient(180deg,var(--bg),#0e141b); color:var(--text);}
+a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+.container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.section{padding:72px 0}
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(13,19,28,.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid #1a2940}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+.logo{width:32px;height:32px;border-radius:9px;
+  background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand2))}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.nav a{opacity:.9} .nav a:hover{opacity:1}
+/* Hero */
+.hero{padding:90px 0 40px}
+.hero h1{font-size:clamp(2rem,4vw,3rem);margin:.2rem 0}
+.hero p{color:#c9d3e1}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid transparent;
+  padding:.8rem 1rem;border-radius:10px;font-weight:650;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#0b0b0b}
+.btn-ghost{border-color:#223042;background:#12202f;color:#dbeafe}
+.card{background:linear-gradient(180deg,#0f172a,#0a1220);border:1px solid #18253a;
+  border-radius:var(--radius);padding:24px}
+.grid{display:grid;gap:22px}
+.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.two,.three{grid-template-columns:1fr}}
+/* Footer */
+footer{border-top:1px solid #1a2940;background:#0c1422;padding:36px 0;color:#c2ccdb}
+footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
+@media (max-width:800px){footer .cols{grid-template-columns:1fr}}

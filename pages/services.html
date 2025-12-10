@@ -1,69 +1,9 @@
-<!-- =============================================================
-DEVELOPER INFORMATION
--------------------------------------------------------------
-Developed by: Max Eldabbas
-Email: maxeldabbas86@gmail.com
-Website/Portfolio:
-GitHub: www.github.com/maxeld1
-Date Created:
-License: Proprietary — Not for redistribution without permission.
--------------------------------------------------------------
-
-
-SALON WEBSITE TEMPLATE — CONFIGURATION NOTES
--------------------------------------------------------------
-
-BRAND INFO
-- Salon Name: "Industry Salon"
-- Tagline: Short phrase that fits your brand
-- Logo: Replace the colored square with your SVG or image
-
-
-CONTACT INFO
-- Phone:
-- Email:
-- Address:
-
-
-HOURS
-- Example: Mon–Fri 9–7, Sat 9–4
-- Update in both HTML + JSON-LD metadata
-
-
-SEO + METADATA
-- Update <title>, <meta name="description">, and Open Graph tags
-- Update JSON-LD LocalBusiness Schema (name, phone, address, social links)
-
-
-BOOKING INTEGRATION
-- Replace modal button link with real booking link
-- OR integrate API from Square, GlossGenius, Fresha, Acuity, or custom
-
-
-IMAGES
-- Replace Unsplash placeholders with actual salon & stylist photos
-- Keep file sizes optimized (150–200 KB for page speed)
-
-
-STYLISTS
-- Replace names, roles, specialties, and images
-- Update booking buttons to link to each stylist’s booking profile
-
-
-SERVICES + PRICING
-- Customize service descriptions
-- Adjust prices, categories, and formatting
-
-
-OPTIONAL ENHANCEMENTS
-- Add a reviews widget (Google Places API or trusted third party)
-- Add a full services page
-- Add an accessibility statement
-- Add a privacy page
-
-
-============================================================= -->
-
+<!--
+  Developed by: YOUR NAME (your@email.com)
+  Repo: https://github.com/YOURUSER/industrysalon
+  Created: 2025-12-10
+  License: Proprietary — Not for redistribution without permission.
+-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -120,25 +60,28 @@ OPTIONAL ENHANCEMENTS
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <span class="btn-ghost" style="display:inline-block;margin-bottom:8px">Downtown • Inclusive • Woman‑owned</span>
-      <h1>Cut. Color. Care.</h1>
-      <p>From lived‑in color to precision cuts, our stylists craft looks that last. New guest packages available — come as you are, leave as your favorite self.</p>
-      <div style="display:flex;gap:12px;margin-top:12px">
-        <a class="btn btn-primary" href="#">Book an Appointment</a>
-        <a class="btn btn-ghost" href="/pages/services.html">See Services</a>
+<main class="section">
+  <div class="container">
+    <h1>Services & Pricing</h1>
+    <div class="grid two" style="margin-top:10px">
+      <div class="card">
+        <h3>Hair</h3>
+        <ul>
+          <li>Cut & Style — $65–$95</li>
+          <li>Blowout — $40–$55</li>
+          <li>Gloss/Toner — $45</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Color</h3>
+        <ul>
+          <li>Single Process — $85</li>
+          <li>Highlights (Partial) — $140</li>
+          <li>Highlights (Full) — $185</li>
+        </ul>
       </div>
     </div>
-  </section>
-  <section class="section">
-    <div class="container grid three">
-      <div class="card"><h3>Precision Cuts</h3><p class="muted">Tailored cuts for all hair types.</p></div>
-      <div class="card"><h3>Color & Blonding</h3><p class="muted">Balayage, glossing, gray blending.</p></div>
-      <div class="card"><h3>Nails & Care</h3><p class="muted">Manis, pedis, structured overlays.</p></div>
-    </div>
-  </section>
+  </div>
 </main>
 
 <footer>
