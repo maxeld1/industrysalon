@@ -102,3 +102,16 @@ footer{
 }
 footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 @media (max-width:800px){footer .cols{grid-template-columns:1fr}}
+
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 6px 20px;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+.hours-grid div:first-child {
+  font-weight: 600;
+}
+
