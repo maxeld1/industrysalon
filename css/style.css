@@ -19,10 +19,14 @@
   --radius:18px;
   --shadow:0 12px 28px rgba(89,78,69,.10), 0 2px 6px rgba(89,78,69,.06);
   --maxw:1200px;
+
+  /* JS will set this accurately; default for SSR */
+  --header-h:72px;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+html,body{overflow-x:hidden}
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:var(--bg);
@@ -53,12 +57,13 @@ a{color:inherit;text-decoration:none}
 .three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.two,.three{grid-template-columns:1fr}}
 
-/* Header */
+/* Header (desktop) */
 header{
   position:sticky;top:0;z-index:30;
   background:rgba(255,255,255,.9);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
+  transition:box-shadow .2s ease;
 }
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .brand{display:flex;align-items:center;gap:.7rem;font-weight:700}
@@ -81,6 +86,19 @@ header{
   transform:scaleX(0);transform-origin:left;transition:.25s ease;
 }
 .nav a:hover::after,.nav a.is-active::after{transform:scaleX(1)}
+
+/* Split/centered header layout */
+.nav-centered{
+  display:grid;
+  grid-template-columns:1fr auto 1fr; /* left nav | logo | right actions */
+  align-items:center;
+}
+.nav-left ul{
+  display:flex;gap:28px;list-style:none;margin:0;padding:0;
+}
+.brand-center{display:flex;justify-content:center}
+.brand-logo{height:54px;width:auto;display:block}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:16px}
 
 /* Buttons */
 .btn{
@@ -148,206 +166,76 @@ footer{
 footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 @media (max-width:800px){footer .cols{grid-template-columns:1fr}}
 
-.footer-social {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start; /* change to center if you prefer */
-  margin-top: 20px;
+.footer-social{
+  display:flex;gap:18px;align-items:center;justify-content:flex-start;margin-top:20px;
 }
-
-.footer-social .icon {
-  width: 26px;
-  height: 26px;
-  fill: var(--logo-brown);
-  opacity: 0.9;
-  transition: opacity .2s ease, transform .2s ease;
+.footer-social .icon{
+  width:26px;height:26px;fill:var(--logo-brown);opacity:.9;transition:opacity .2s ease, transform .2s ease;
 }
-.footer-social a:hover .icon {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
+.footer-social a:hover .icon{opacity:1;transform:translateY(-2px)}
 
 /* Hours (two-column premium layout) */
 .hours-grid{
-  display:grid;
-  grid-template-columns:auto auto;
-  gap:6px 20px;
-  color:#4a4a4a;
-  line-height:1.6;
+  display:grid;grid-template-columns:auto auto;gap:6px 20px;color:#4a4a4a;line-height:1.6;
 }
 .hours-grid div:first-child{font-weight:600;color:var(--logo-brown)}
 
-/* Navbar logo image */
-.brand-logo{
-  height:48px;
-  width:auto;
-  display:block;
-  /* border-radius:12px;  uncomment if you want rounded logo edges */
-}
-
-/* Keep the brand aligned in the header */
-header .brand{display:flex;align-items:center}
+/* ---------- Mobile behaviors ---------- */
 
 /* Reserve space under fixed header on mobile */
-:root { --header-h: 72px; } /* default, JS will overwrite accurately */
-@media (max-width: 768px){
-  body { padding-top: var(--header-h); }
+@media (max-width:768px){
+  body{ padding-top:var(--header-h); }
 }
 
 /* Make header fixed on mobile; avoid Safari backdrop-filter jank */
-@media (max-width: 768px){
+@media (max-width:768px){
   header{
-    position: fixed; top: 0; left: 0; right: 0;
-    background: #fff;           /* solid for stability */
-    backdrop-filter: none;       /* disable blur on mobile */
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 6px 16px rgba(0,0,0,.06);
+    position:fixed;top:0;left:0;right:0;
+    background:#fff;backdrop-filter:none;border-bottom:1px solid var(--line);
+    box-shadow:0 6px 16px rgba(0,0,0,.06);z-index:3000;
   }
-  .nav{ padding: 10px 0; }
-  .brand-logo{ height: 40px; }  /* slightly smaller on mobile */
-  .cta-book{ display: none; }    /* optional: hide large CTA button on tiny screens */
+  .nav{ padding:10px 0; }
+  .brand-logo{ height:44px; } /* slightly smaller on mobile */
+  .cta-book{ display:none; }  /* optional: hide large CTA button */
 }
 
-/* Hide desktop nav & show hamburger on mobile */
+/* Hamburger button */
 .menu-toggle{
-  display: none;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 6px 8px;
-  color: var(--logo-brown);
-  box-shadow: var(--shadow);
-}
-@media (max-width: 768px){
-  .menu-toggle{ display: inline-flex; align-items: center; gap: 6px; }
-  .site-nav{ position: fixed; top: var(--header-h); left: 0; right: 0;
-             background: #fff; border-bottom: 1px solid var(--line);
-             transform: translateY(-8px); opacity: 0; pointer-events: none;
-             transition: transform .2s ease, opacity .2s ease;
-             box-shadow: 0 12px 24px rgba(0,0,0,.06);
-  }
-  .site-nav ul{
-    display: grid; gap: 4px; list-style: none; margin: 0; padding: 12px 16px;
-  }
-  .site-nav a{
-    display: block; padding: 12px 8px; font-family: Inter, sans-serif;
-    color: var(--logo-brown); font-weight: 600;
-  }
-  /* Open state */
-  .site-nav.is-open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+  display:none;background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:6px 8px;color:var(--logo-brown);
+  box-shadow:var(--shadow);cursor:pointer;
 }
 
-/* Desktop keeps your existing look */
-@media (min-width: 769px){
-  .site-nav ul{ display: flex; gap: 28px; list-style: none; margin:0; padding:0; }
+/* Mobile layout */
+@media (max-width:768px){
+  /* keep balanced grid so logo stays centered */
+  .nav-centered{ grid-template-columns:1fr auto 1fr; }
+
+  /* show hamburger on the right */
+  .menu-toggle{ display:inline-flex; align-items:center; justify-content:center; margin-left:auto; }
+
+  /* keep nav container in DOM (for slide-down panel) */
+  .nav-left{ display:block; }
+
+  /* slide-down mobile menu panel */
+  .site-nav{
+    position:fixed; top:var(--header-h); left:0; right:0;
+    background:#fff; border-bottom:1px solid var(--line);
+    transform:translateY(-8px); opacity:0; pointer-events:none;
+    transition:transform .2s ease, opacity .2s ease;
+    box-shadow:0 12px 24px rgba(0,0,0,.06); z-index:2000;
+  }
+  .site-nav.is-open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .site-nav ul{ display:grid; gap:6px; list-style:none; margin:0; padding:12px 16px; }
+  .site-nav a{ display:block; padding:12px 8px; font-family:Inter,sans-serif; color:var(--logo-brown); font-weight:600; }
+}
+
+/* Desktop keeps inline nav */
+@media (min-width:769px){
+  .site-nav ul{ display:flex; gap:28px; list-style:none; margin:0; padding:0; }
 }
 
 /* Improve tap targets */
-@media (max-width: 768px){
+@media (max-width:768px){
   .btn, .site-nav a { -webkit-tap-highlight-color: transparent; }
 }
-
-/* Prevent sideways scroll on mobile */
-html, body { overflow-x: hidden; }
-
-/* Centered logo nav layout */
-.nav-centered {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-}
-
-/* Left nav */
-.nav-left ul {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Center logo */
-.brand-center {
-  display: flex;
-  justify-content: center;
-}
-.brand-logo {
-  height: 54px;
-  width: auto;
-}
-
-/* Right side: book + hamburger */
-.nav-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 16px;
-}
-
-/* MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-  .nav-centered {
-    grid-template-columns: auto auto auto; /* keeps structure but adjusts scale */
-  }
-
-  .nav-left {
-    display: none; /* hide desktop nav */
-  }
-
-  .nav-right .cta-book {
-    display: none; /* optional: hide large book button */
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  /* Center the brand logo on mobile */
-  .brand-logo {
-    height: 46px;
-  }
-}
-
-/* --- FINAL MOBILE FIX PATCH --- */
-@media (max-width: 768px){
-  /* Keep logo perfectly centered with flexible sides */
-  .nav-centered { grid-template-columns: 1fr auto 1fr; }
-
-  /* Keep nav container in DOM so it can slide down */
-  .nav-left { display: block; }
-
-  /* Hamburger visible & hugs the right edge */
-  .menu-toggle{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto; /* ensures right alignment inside .nav-right */
-  }
-
-  /* Slide-down menu panel */
-  .site-nav{
-    position: fixed;
-    top: var(--header-h);
-    left: 0; right: 0;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .2s ease, opacity .2s ease;
-    box-shadow: 0 12px 24px rgba(0,0,0,.06);
-    z-index: 2000;
-  }
-  .site-nav.is-open{
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Logo a touch smaller; header above menu */
-  .brand-logo{ height: 44px; }
-  header{ z-index: 3000; }
-}
-
