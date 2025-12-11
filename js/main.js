@@ -1,91 +1,63 @@
-// ---------- JS (js/main.js) ----------
-
-console.log("Industry Salon site loaded:", new Date().toISOString());
-
-/* Active nav highlighting (robust with ../ and subpaths) */
+// js/main.js
 (function(){
-  const norm = p => ("/" + p).replace(/\/+/g, "/").replace(/\/$/, "");
-  const here = norm(location.pathname);
-  document.addEventListener('DOMContentLoaded', () => {
+  const log = (...a)=>console.log('[nav]', ...a);
+
+  function norm(p){ return ("/"+p).replace(/\/+/g,"/").replace(/\/$/,""); }
+  // Active link
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const here = norm(location.pathname);
     document.querySelectorAll('header nav a').forEach(a=>{
-      const href = a.getAttribute('href');
-      if (!href) return;
-      const url = new URL(href, location.href);   // resolves ../ etc.
-      const target = norm(url.pathname);
-      if (here === target) a.classList.add('is-active');
+      const href = a.getAttribute('href'); if(!href) return;
+      const target = norm(new URL(href, location.href).pathname);
+      if(here === target) a.classList.add('is-active');
     });
   });
-})();
 
-/* Header shadow on scroll */
-(function(){
-  const header = document.querySelector('header');
-  const onScroll = () => header && (header.style.boxShadow =
-    (window.scrollY > 6) ? '0 10px 24px rgba(110,101,92,.06)' : 'none');
-  onScroll();
-  window.addEventListener('scroll', onScroll, {passive:true});
-})();
-
-/* Mobile header/menu: measure height, toggle panel, scroll lock, ESC & click-outside */
-(function initMobileNav(){
-  const boot = () => {
+  function init(){
     const header = document.querySelector('header');
-    const root = document.documentElement;
     const menuBtn = document.querySelector('.menu-toggle');
     const nav = document.getElementById('mobile-menu') || document.querySelector('.site-nav');
+    if(!header || !menuBtn || !nav){ log('waiting for header…'); return false; }
 
-    if (!header || !menuBtn || !nav) return;
+    // measure header for mobile offset
+    const root = document.documentElement;
+    const setH = () => root.style.setProperty('--header-h', (header.offsetHeight||72) + 'px');
+    setH(); addEventListener('resize', setH, {passive:true}); addEventListener('orientationchange', setH);
 
-    // Keep layout from jumping
-    function setHeaderH(){
-      const h = header.offsetHeight || 72;
-      root.style.setProperty('--header-h', h + 'px');
-    }
-    setHeaderH();
-    window.addEventListener('resize', setHeaderH, {passive:true});
-    window.addEventListener('orientationchange', setHeaderH);
+    const lock = ()=>{ document.body.style.overflow='hidden'; };
+    const unlock = ()=>{ document.body.style.overflow=''; };
 
-    // Body scroll lock helpers
-    const lockBody = () => { document.body.style.overflow = 'hidden'; };
-    const unlockBody = () => { document.body.style.overflow = ''; };
-
-    // Toggle function
-    const toggle = (forceOpen) => {
-      const willOpen = (typeof forceOpen === 'boolean') ? forceOpen : !nav.classList.contains('is-open');
-      nav.classList.toggle('is-open', willOpen);
-      menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      willOpen ? lockBody() : unlockBody();
-      setTimeout(setHeaderH, 50);
+    const toggle = (force)=>{
+      const open = (typeof force==='boolean') ? force : !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      open ? lock() : unlock();
+      setTimeout(setH, 50);
+      log('menu', open ? 'opened' : 'closed');
     };
 
-    // Click hamburger
-    menuBtn.addEventListener('click', () => toggle());
-
-    // Close after link click
-    nav.querySelectorAll('a').forEach(a=>{
-      a.addEventListener('click', () => toggle(false));
+    menuBtn.addEventListener('click', ()=>toggle());
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>toggle(false)));
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && nav.classList.contains('is-open')) toggle(false); });
+    document.addEventListener('click', e=>{
+      if(!nav.classList.contains('is-open')) return;
+      if(!nav.contains(e.target) && !menuBtn.contains(e.target)) toggle(false);
     });
 
-    // Close on ESC
-    document.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) toggle(false);
-    });
-
-    // Click outside to close
-    document.addEventListener('click', (e)=>{
-      if (!nav.classList.contains('is-open')) return;
-      const withinNav = nav.contains(e.target);
-      const isBtn = menuBtn.contains(e.target);
-      if (!withinNav && !isBtn) toggle(false);
-    });
-  };
-
-  // If header/footer are injected via partials.js, wait for DOM, then a tick
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => setTimeout(boot, 0));
-  } else {
-    setTimeout(boot, 0);
+    log('bound listeners');
+    return true;
   }
-})();
 
-console.log("Luxe Beige theme loaded");
+  // Try immediately, then retry a few times in case partials load after
+  if(!init()){
+    let tries = 0;
+    const t = setInterval(()=>{
+      tries++; if(init() || tries>12) clearInterval(t); // retry up to ~3s
+    }, 250);
+  }
+
+  // Pretty header shadow
+  const hdr = document.querySelector('header');
+  const onScroll = ()=>{ if(hdr) hdr.style.boxShadow = (scrollY>6) ? '0 10px 24px rgba(110,101,92,.06)' : 'none'; };
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+})();
