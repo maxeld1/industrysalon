@@ -2,30 +2,34 @@
 (function(){
   const log = (...a)=>console.log('[nav]', ...a);
 
+  // Normalize path to highlight active link
   function norm(p){ return ("/"+p).replace(/\/+/g,"/").replace(/\/$/,""); }
-  // Active link
+
   document.addEventListener('DOMContentLoaded', ()=>{
     const here = norm(location.pathname);
     document.querySelectorAll('header nav a').forEach(a=>{
       const href = a.getAttribute('href'); if(!href) return;
       const target = norm(new URL(href, location.href).pathname);
-      if(here === target) a.classList.add('is-active');
+      if (here === target) a.classList.add('is-active');
     });
   });
 
-  function init(){
+  let bound = false;
+
+  function tryBind(){
+    if (bound) return true;
     const header = document.querySelector('header');
     const menuBtn = document.querySelector('.menu-toggle');
     const nav = document.getElementById('mobile-menu') || document.querySelector('.site-nav');
-    if(!header || !menuBtn || !nav){ log('waiting for header…'); return false; }
+    if (!header || !menuBtn || !nav) return false;
 
-    // measure header for mobile offset
+    // Set --header-h for mobile offset
     const root = document.documentElement;
     const setH = () => root.style.setProperty('--header-h', (header.offsetHeight||72) + 'px');
     setH(); addEventListener('resize', setH, {passive:true}); addEventListener('orientationchange', setH);
 
-    const lock = ()=>{ document.body.style.overflow='hidden'; };
-    const unlock = ()=>{ document.body.style.overflow=''; };
+    const lock = ()=>document.body.classList.add('no-scroll');
+    const unlock = ()=>document.body.classList.remove('no-scroll');
 
     const toggle = (force)=>{
       const open = (typeof force==='boolean') ? force : !nav.classList.contains('is-open');
@@ -44,20 +48,25 @@
       if(!nav.contains(e.target) && !menuBtn.contains(e.target)) toggle(false);
     });
 
+    // Header shadow on scroll
+    const onScroll = ()=>{ header.style.boxShadow = (scrollY>6) ? '0 10px 24px rgba(110,101,92,.06)' : 'none'; };
+    onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+    bound = true;
     log('bound listeners');
     return true;
   }
 
-  // Try immediately, then retry a few times in case partials load after
-  if(!init()){
+  // Bind now if possible
+  if (!tryBind()){
+    // Retry briefly (fast path)
     let tries = 0;
     const t = setInterval(()=>{
-      tries++; if(init() || tries>12) clearInterval(t); // retry up to ~3s
+      if (tryBind() || ++tries > 12) clearInterval(t);
     }, 250);
-  }
 
-  // Pretty header shadow
-  const hdr = document.querySelector('header');
-  const onScroll = ()=>{ if(hdr) hdr.style.boxShadow = (scrollY>6) ? '0 10px 24px rgba(110,101,92,.06)' : 'none'; };
-  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+    // And also observe DOM for late-injected header (robust path)
+    const mo = new MutationObserver(() => { if (tryBind()) mo.disconnect(); });
+    mo.observe(document.documentElement, { childList:true, subtree:true });
+  }
 })();
