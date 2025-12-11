@@ -44,19 +44,30 @@
 <header>
   <div class="container nav">
     <a class="brand" href="../index.html">
-      <img src="../assets/images/industry_salon_logo.jpg" alt="Industry Salon Logo" class="brand-logo">
+      <img src="assets/images/industry_salon_logo.jpg" alt="Industry Salon Logo" class="brand-logo">
     </a>
-    <nav>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+      <!-- 3-line icon -->
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Wrap your nav in .site-nav so we can slide it in on mobile -->
+    <nav class="site-nav">
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="stylists.html">Stylists</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="pages/services.html">Services</a></li>
+        <li><a href="pages/stylists.html">Stylists</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary" href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944" aria-label="Book now">Book Now</a>
+
+    <a class="btn btn-primary cta-book" href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">Book Now</a>
   </div>
 </header>
+
 
 <main class="section">
   <div class="container grid two">
