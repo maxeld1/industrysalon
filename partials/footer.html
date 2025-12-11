@@ -87,20 +87,29 @@
   <!-- Shared scripts from one place -->
   <script>
   (function () {
+    // Current path, e.g. /industrysalon/pages/services.html
     var path = location.pathname;
-    // If we're inside /pages/... strip that off to get the site root prefix (repo-aware)
+  
+    // Compute root that works on both / and /your-repo/
+    // If we're inside /pages/, strip that and keep the repo prefix.
     var root = path.includes('/pages/')
       ? path.split('/pages/')[0] + '/'
       : path.substring(0, path.lastIndexOf('/') + 1);
   
-    // Ensure trailing slash
     if (!root.endsWith('/')) root += '/';
   
     var s = document.createElement('script');
     s.src = root + 'js/main.js';
     s.defer = true;
     document.body.appendChild(s);
+  
+    // Set footer year safely (footer may not exist yet)
+    document.addEventListener('DOMContentLoaded', function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
   })();
   </script>
+
   <script>document.getElementById("year").textContent = new Date().getFullYear()</script>
 </footer>
