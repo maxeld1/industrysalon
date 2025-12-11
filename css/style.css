@@ -252,3 +252,60 @@ header .brand{display:flex;align-items:center}
 /* Prevent sideways scroll on mobile */
 html, body { overflow-x: hidden; }
 
+/* Centered logo nav layout */
+.nav-centered {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/* Left nav */
+.nav-left ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Center logo */
+.brand-center {
+  display: flex;
+  justify-content: center;
+}
+.brand-logo {
+  height: 54px;
+  width: auto;
+}
+
+/* Right side: book + hamburger */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .nav-centered {
+    grid-template-columns: auto auto auto; /* keeps structure but adjusts scale */
+  }
+
+  .nav-left {
+    display: none; /* hide desktop nav */
+  }
+
+  .nav-right .cta-book {
+    display: none; /* optional: hide large book button */
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Center the brand logo on mobile */
+  .brand-logo {
+    height: 46px;
+  }
+}
