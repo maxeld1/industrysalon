@@ -309,3 +309,45 @@ html, body { overflow-x: hidden; }
     height: 46px;
   }
 }
+
+/* --- FINAL MOBILE FIX PATCH --- */
+@media (max-width: 768px){
+  /* Keep logo perfectly centered with flexible sides */
+  .nav-centered { grid-template-columns: 1fr auto 1fr; }
+
+  /* Keep nav container in DOM so it can slide down */
+  .nav-left { display: block; }
+
+  /* Hamburger visible & hugs the right edge */
+  .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto; /* ensures right alignment inside .nav-right */
+  }
+
+  /* Slide-down menu panel */
+  .site-nav{
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .2s ease, opacity .2s ease;
+    box-shadow: 0 12px 24px rgba(0,0,0,.06);
+    z-index: 2000;
+  }
+  .site-nav.is-open{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Logo a touch smaller; header above menu */
+  .brand-logo{ height: 44px; }
+  header{ z-index: 3000; }
+}
+
