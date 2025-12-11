@@ -189,3 +189,66 @@ footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 
 /* Keep the brand aligned in the header */
 header .brand{display:flex;align-items:center}
+
+/* Reserve space under fixed header on mobile */
+:root { --header-h: 72px; } /* default, JS will overwrite accurately */
+@media (max-width: 768px){
+  body { padding-top: var(--header-h); }
+}
+
+/* Make header fixed on mobile; avoid Safari backdrop-filter jank */
+@media (max-width: 768px){
+  header{
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #fff;           /* solid for stability */
+    backdrop-filter: none;       /* disable blur on mobile */
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  }
+  .nav{ padding: 10px 0; }
+  .brand-logo{ height: 40px; }  /* slightly smaller on mobile */
+  .cta-book{ display: none; }    /* optional: hide large CTA button on tiny screens */
+}
+
+/* Hide desktop nav & show hamburger on mobile */
+.menu-toggle{
+  display: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 6px 8px;
+  color: var(--logo-brown);
+  box-shadow: var(--shadow);
+}
+@media (max-width: 768px){
+  .menu-toggle{ display: inline-flex; align-items: center; gap: 6px; }
+  .site-nav{ position: fixed; top: var(--header-h); left: 0; right: 0;
+             background: #fff; border-bottom: 1px solid var(--line);
+             transform: translateY(-8px); opacity: 0; pointer-events: none;
+             transition: transform .2s ease, opacity .2s ease;
+             box-shadow: 0 12px 24px rgba(0,0,0,.06);
+  }
+  .site-nav ul{
+    display: grid; gap: 4px; list-style: none; margin: 0; padding: 12px 16px;
+  }
+  .site-nav a{
+    display: block; padding: 12px 8px; font-family: Inter, sans-serif;
+    color: var(--logo-brown); font-weight: 600;
+  }
+  /* Open state */
+  .site-nav.is-open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+}
+
+/* Desktop keeps your existing look */
+@media (min-width: 769px){
+  .site-nav ul{ display: flex; gap: 28px; list-style: none; margin:0; padding:0; }
+}
+
+/* Improve tap targets */
+@media (max-width: 768px){
+  .btn, .site-nav a { -webkit-tap-highlight-color: transparent; }
+}
+
+/* Prevent sideways scroll on mobile */
+html, body { overflow-x: hidden; }
+
