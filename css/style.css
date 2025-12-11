@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+/* ===== Luxe Beige — industrysalon (Spectral + Inter) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   /* Core, matched to your logo/background */
@@ -26,13 +27,22 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 
 /* Typography */
-h1,h2{letter-spacing:-0.02em}
-h1{font-family:Playfair Display, serif;font-weight:600;color:var(--logo-brown)}
+h1,h2,h3,h4{
+  font-family:'Spectral', serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  color:var(--logo-brown);
+  margin:0 0 .5rem 0;
+}
+h1{font-size:clamp(2.6rem,4.8vw,4.2rem); line-height:1.12}
+h2{font-size:clamp(1.9rem,3.2vw,2.6rem); line-height:1.22}
+h3{font-size:1.45rem; line-height:1.25}
+p{line-height:1.75; color:var(--muted)}
 a{color:inherit;text-decoration:none}
 
 /* Layout */
@@ -60,7 +70,9 @@ header{
 .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .nav a{
   position:relative;
-  font-weight:600;
+  font-family:Inter, sans-serif;
+  font-weight:500;
+  letter-spacing:.01em;
   color:var(--logo-brown);
 }
 .nav a::after{
@@ -78,6 +90,7 @@ header{
   background:var(--panel);
   box-shadow:var(--shadow);
   transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  font-family:Inter, sans-serif;
 }
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{
@@ -97,8 +110,8 @@ header{
     radial-gradient(1200px 600px at 0% -10%, rgba(180,137,106,.16), transparent 60%),
     radial-gradient(900px 500px at 100% -10%, rgba(154,167,163,.12), transparent 60%);
 }
-.hero h1{font-size:clamp(2.6rem,4.5vw,3.6rem);margin:.3rem 0 .8rem}
-.hero p{color:var(--muted);max-width:62ch}
+.hero h1{margin:.3rem 0 .8rem}
+.hero p{max-width:62ch}
 
 /* Cards */
 .card{
