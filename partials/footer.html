@@ -85,6 +85,15 @@
   </div>
 
   <!-- Shared scripts from one place -->
-  <script src="{{P}}js/main.js"></script>
+  <script>
+  (function () {
+    // If the URL contains /pages/ we’re inside the pages folder; use ../ prefix
+    var base = (location.pathname.indexOf('/pages/') !== -1) ? '../' : '';
+    var s = document.createElement('script');
+    s.src = base + 'js/main.js';
+    s.defer = true;
+    document.body.appendChild(s);
+  })();
+  </script>
   <script>document.getElementById("year").textContent = new Date().getFullYear()</script>
 </footer>
