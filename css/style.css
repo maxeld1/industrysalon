@@ -247,3 +247,17 @@ footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 .fc-icon { width:20px; height:20px; fill:var(--logo-brown); opacity:.9; flex-shrink:0; transition:transform .2s ease, opacity .2s ease; }
 .fc-row:hover .fc-icon { opacity:1; transform:translateY(-1px); }
 
+@media (max-width:768px){
+  .nav-centered { grid-template-columns: 1fr auto 1fr; }   /* keeps logo centered */
+  .nav-left { display:block; }                              /* keep nav in DOM */
+  .menu-toggle { display:inline-flex; margin-left:auto; }   /* right-align hamburger */
+  .site-nav{
+    position:fixed; top:var(--header-h); left:0; right:0;
+    background:#fff; border-bottom:1px solid var(--line);
+    transform:translateY(-8px); opacity:0; pointer-events:none;
+    transition:transform .2s ease, opacity .2s ease;
+    box-shadow:0 12px 24px rgba(0,0,0,.06); z-index:2000;
+  }
+  .site-nav.is-open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  header{ z-index:3000; }
+}
