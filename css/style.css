@@ -148,6 +148,27 @@ footer{
 footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 @media (max-width:800px){footer .cols{grid-template-columns:1fr}}
 
+.footer-social {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start; /* change to center if you prefer */
+  margin-top: 20px;
+}
+
+.footer-social .icon {
+  width: 26px;
+  height: 26px;
+  fill: var(--logo-brown);
+  opacity: 0.9;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.footer-social a:hover .icon {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+
 /* Hours (two-column premium layout) */
 .hours-grid{
   display:grid;
