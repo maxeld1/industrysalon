@@ -239,3 +239,11 @@ footer .cols{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
 @media (max-width:768px){
   .btn, .site-nav a { -webkit-tap-highlight-color: transparent; }
 }
+
+/* Footer contact block */
+.footer-contact { display:grid; gap:12px; }
+.fc-row { display:flex; align-items:center; gap:10px; font-family:Inter, sans-serif; color:var(--text); line-height:1.4; }
+.fc-row a { text-decoration:none; }
+.fc-icon { width:20px; height:20px; fill:var(--logo-brown); opacity:.9; flex-shrink:0; transition:transform .2s ease, opacity .2s ease; }
+.fc-row:hover .fc-icon { opacity:1; transform:translateY(-1px); }
+
