@@ -249,6 +249,10 @@ footer h4{
   color:var(--logo-brown);
 }
 
+.hours-row div:first-child {
+  font-weight: 600;
+}
+
 /* Social row */
 .footer-social{
   display:flex; gap:18px; align-items:center;
