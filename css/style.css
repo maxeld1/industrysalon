@@ -120,10 +120,32 @@ header{
 }
 .btn:hover{ transform:translateY(-1px) }
 .btn-primary{
-  color:#FFF7ED; border-color:transparent;
-  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  background:transparent;
+  border:1px solid var(--brand);
+  color:var(--brand2);
+  padding:.75rem 1.25rem;
+  font-weight:600;
+  border-radius:12px;
+  box-shadow:none;
+  transition:all .25s ease;
 }
-.btn-ghost{ background:var(--panel-soft); border-color:var(--line); color:var(--logo-brown) }
+
+.btn-primary:hover{
+  background:rgba(180,137,106,0.10);
+  transform:translateY(-2px);
+}
+
+.btn-ghost{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--logo-brown);
+  padding:.75rem 1.25rem;
+}
+
+.btn-ghost:hover{
+  background:rgba(255,255,255,0.6);
+  transform:translateY(-2px);
+}
 
 /* -------------------- Hero -------------------- */
 .hero{
