@@ -200,6 +200,13 @@ footer .cols{ display:grid; gap:20px; grid-template-columns:2fr 1fr 1fr }
 }
 .footer-social a:hover .icon{ opacity:1; transform:translateY(-2px) }
 
+footer h4 {
+  font-family: 'Spectral', serif;
+  color: var(--logo-brown);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
 /* Hours grid */
 .hours-grid{
   display:grid; grid-template-columns:auto auto; gap:6px 20px; color:#4a4a4a; line-height:1.6;
