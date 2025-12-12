@@ -1,0 +1,43 @@
+<!-- /partials/header.html -->
+<header>
+  <div class="container nav nav-centered">
+
+    <!-- LEFT NAV: desktop & mobile menu panel -->
+    <nav id="mobile-menu" class="nav-left site-nav">
+      <ul>
+        <li><a href="{{P}}pages/services.html">Services</a></li>
+        <li><a href="{{P}}pages/stylists.html">Stylists</a></li>
+        <li><a href="{{P}}pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CENTER LOGO -->
+    <a class="brand brand-center" href="{{P}}index.html">
+      <img src="{{P}}assets/images/industry_salon_logo.jpg"
+           alt="Industry Salon Logo"
+           class="brand-logo">
+    </a>
+
+    <!-- RIGHT SIDE: CTA + HAMBURGER -->
+    <div class="nav-right">
+      <a class="btn btn-primary cta-book"
+         href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">
+        Book Now
+      </a>
+
+      <button class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>

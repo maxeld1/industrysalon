@@ -1,6 +1,6 @@
 <!--
-  Developed by: YOUR NAME (your@email.com)
-  Repo: https://github.com/YOURUSER/industrysalon
+  Developed by: Max Eldabbas (maxeldabbas86@gmail.com)
+  Repo: https://github.com/maxeld1/industrysalon
   Created: 2025-12-10
   License: Proprietary — Not for redistribution without permission.
 -->
@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Industry Salon — Hair • Beauty • Nails</title>
   <meta name="description" content="Industry Salon — modern cuts, color, nails and skincare. Book online or call." />
-  <link rel="icon" href="/assets/icons/favicon.ico" />
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="../assets/icons/favicon.ico" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="stylesheet" href="../css/style.css" />
   <meta property="og:title" content="Industry Salon — Hair • Beauty • Nails" />
   <meta property="og:description" content="Modern salon in [City]. Book online or call." />
   <meta property="og:type" content="website" />
@@ -21,78 +21,44 @@
   <meta property="og:image" content="https://example.com/og-image.jpg" />
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Industry Salon",
-  "telephone": "+1-555-555-5555",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "123 Main St",
-    "addressLocality": "Your City",
-    "addressRegion": "PA",
-    "postalCode": "19000",
-    "addressCountry": "US"
-  },
-  "openingHours": [
-    "Mo-Fr 09:00-19:00",
-    "Sa 09:00-16:00"
-  ],
-  "url": "https://example.com",
-  "sameAs": [
-    "https://instagram.com/yourhandle"
-  ]
-}
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Industry Salon",
+    "telephone": "(484) 420-4082",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4631 W. Chester Pike",
+      "addressLocality": "Newtown Square",
+      "addressRegion": "PA",
+      "postalCode": "19073",
+      "addressCountry": "US"
+    },
+    "openingHours": ["Mo-Thurs 09:00-20:00","Fri-Sa 08:00-14:00"],
+    "url": "https://www.industrysalonlounge.com",
+    "sameAs": ["https://instagram.com/industrysalonnewtownsquare"]
+  }
   </script>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="/"><span class="logo" aria-hidden="true"></span> Industry Salon</a>
-    <nav>
-      <ul>
-        <li><a href="/pages/services.html">Services</a></li>
-        <li><a href="/pages/stylists.html">Stylists</a></li>
-        <li><a href="/pages/contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-primary" href="#" aria-label="Book now">Book Now</a>
-  </div>
-</header>
+
+<div data-include="header"></div>
 
 <main class="section">
   <div class="container">
     <h1>Meet the Team</h1>
     <div class="grid three" style="margin-top:10px">
-      <article class="card"><h3>Ava Park — Master Colorist</h3><p class="muted">Dimensional blondes • corrective color</p></article>
-      <article class="card"><h3>Jordan Lee — Cutter</h3><p class="muted">Curly cuts • shags • bobs</p></article>
-      <article class="card"><h3>Riley Chen — Nail Artist</h3><p class="muted">Structured manis • gel overlay</p></article>
+      <article class="card"><h3>Marybeth — Master Stylist</h3><p class="muted">Styling • Other Placeholder </p></article>
+      <article class="card"><h3>Lisa DellaPenna Riggs — Master Stylist</h3><p class="muted">Cuts • Placeholder • Placeholder</p></article>
     </div>
   </div>
 </main>
 
-<footer>
-  <div class="container cols">
-    <div>
-      <strong>Industry Salon</strong>
-      <p class="muted">Hair • Beauty • Nails in [City]. Inclusive care for every texture.</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
-        <li><a href="/pages/services.html">Services</a></li>
-        <li><a href="/pages/stylists.html">Stylists</a></li>
-        <li><a href="/pages/contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Hours</h4>
-      <p class="muted">Mon–Fri 9–7, Sat 9–4</p>
-    </div>
-  </div>
-  <div class="container" style="margin-top:10px;color:#8fa2b8">© <span id="year"></span> Industry Salon.</div>
-</footer>
-<script src="/js/main.js"></script>
+<div data-include="footer"></div>
+  
+<script src="../js/main.js"></script>
+<script src="../js/partials.js"></script>
+  
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
