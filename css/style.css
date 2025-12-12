@@ -175,43 +175,93 @@ header{
 
 /* -------------------- Footer -------------------- */
 footer{
-  background:#EAE0D6; border-top:1px solid var(--line); padding:44px 0; color:var(--text);
+  background:#EAE0D6;
+  border-top:1px solid var(--line);
+  color:var(--text);
+  padding:48px 0 36px;
 }
-footer .cols{ display:grid; gap:20px; grid-template-columns:2fr 1fr 1fr }
-@media (max-width:800px){ footer .cols{ grid-template-columns:1fr } }
+footer .cols{
+  display:grid;
+  gap:28px 36px;
+  grid-template-columns: 2fr 1fr 1.2fr;  /* brand | links | hours */
+  align-items:start;
+}
+@media (max-width:800px){
+  footer .cols{ grid-template-columns:1fr; }
+}
 
-/* Contact with icons */
-.footer-contact{ display:grid; gap:12px; margin-top:10px }
-.fc-row{ display:flex; align-items:center; gap:10px; line-height:1.4; }
-.fc-row a{ text-decoration:none }
-.fc-icon{
-  width:20px; height:20px; fill:var(--logo-brown); opacity:.9; flex-shrink:0;
-  transition:transform .2s ease, opacity .2s ease;
+/* Titles (“Quick Links”, “Hours”) */
+footer h4{
+  font-family:'Spectral', serif;
+  font-weight:600;
+  font-size:1.35rem;
+  letter-spacing:-0.01em;
+  color:var(--logo-brown);
+  margin:0 0 12px;
 }
-.fc-row:hover .fc-icon{ opacity:1; transform:translateY(-1px) }
 
-/* Social icons row */
-.footer-social{
-  display:flex; gap:18px; align-items:center; justify-content:flex-start; margin-top:20px;
+/* Brand block text */
+.footer-about p{
+  margin:0 0 12px;
+  font-size:1.05rem;
 }
-.footer-social .icon{
-  width:26px; height:26px; fill:var(--logo-brown); opacity:.9;
+
+/* Contact rows (icons + text) */
+.footer-contact{ display:grid; gap:12px; }
+.fc-row{
+  display:flex; align-items:center; gap:12px;
+  line-height:1.5;
+}
+.fc-row a{ text-decoration:none; }
+
+/* OUTLINE icon style (fixes the filled rectangle) */
+.fc-icon, .footer-social .icon{
+  width:22px; height:22px;
+  fill:none;
+  stroke:var(--logo-brown);
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex-shrink:0;
+  opacity:.95;
   transition:opacity .2s ease, transform .2s ease;
 }
-.footer-social a:hover .icon{ opacity:1; transform:translateY(-2px) }
+.fc-row:hover .fc-icon{ transform:translateY(-1px); opacity:1; }
 
-footer h4 {
-  font-family: 'Spectral', serif;
-  color: var(--logo-brown);
-  font-size: 1.3rem;
-  font-weight: 600;
+/* Footer links list */
+.footer-links ul{
+  list-style:none; margin:0; padding:0; display:grid; gap:8px;
 }
+.footer-links a{
+  font-weight:600; color:var(--logo-brown);
+}
+.footer-links a:hover{ text-decoration:underline; }
 
-/* Hours grid */
+/* Hours */
 .hours-grid{
-  display:grid; grid-template-columns:auto auto; gap:6px 20px; color:#4a4a4a; line-height:1.6;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap:8px 28px;
+  font-size:1.05rem;
 }
-.hours-grid div:first-child{ font-weight:600; color:var(--logo-brown) }
+.hours-grid div:first-child{
+  font-weight:600;
+  color:var(--logo-brown);
+}
+
+/* Social row */
+.footer-social{
+  display:flex; gap:18px; align-items:center;
+  margin-top:16px;
+}
+.footer-social a:hover .icon{ transform:translateY(-2px); }
+
+/* Bottom line */
+.footer-bottom{
+  margin-top:14px;
+  color:#8fa2b8;
+  font-size:.95rem;
+}
 
 /* -------------------- Mobile Behaviors -------------------- */
 /* Reserve space under fixed header on mobile */
