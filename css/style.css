@@ -7,6 +7,7 @@
   font-family: 'Alta';
   src: url('../assets/fonts/Alta_regular.woff2') format('woff2'),
   url('../assets/fonts/Alta_regular.woff')  format('woff');
+  url('../assets/fonts/Alta_regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
