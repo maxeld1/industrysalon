@@ -186,6 +186,44 @@ header{
 .showcase img{ display:block; width:100%; height:auto }
 
 /* -------------------- Footer -------------------- */
+/* Footer layout swap (Quick Links ← center → Hours) */
+.footer-new {
+  grid-template-columns: 1fr 1fr 1fr; /* left | center | right */
+  text-align: left;
+}
+
+/* Center column logo */
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-logo {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* Center the social icons under the logo */
+.center-social {
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Hours block (line-by-line layout) */
+.hours-list {
+  display: grid;
+  gap: 8px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 footer{
   background:#EAE0D6;
   border-top:1px solid var(--line);
