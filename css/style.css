@@ -159,6 +159,11 @@ header{
   transform:translateY(-2px);
 }
 
+.page-title {
+  text-align:center;
+  margin: 0 auto 1.2rem;
+}
+
 /* -------------------- Hero -------------------- */
 .hero{
   padding:110px 0 70px;
