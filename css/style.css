@@ -114,7 +114,7 @@ header{
 }
 
 .brand-center{ display:flex; justify-content:center }
-.brand-logo{ height:84px; width:auto; display:block }
+.brand-logo{ height:64px; width:auto; display:block }
 
 .nav-right{ display:flex; justify-content:flex-end; align-items:center; gap:16px }
 
