@@ -186,12 +186,8 @@ header{
 .showcase img{ display:block; width:100%; height:auto }
 
 /* -------------------- Footer -------------------- */
-/* Footer layout swap (Quick Links ← center → Hours) */
-.footer-new {
-  grid-template-columns: 1fr 1fr 1fr; /* left | center | right */
-  text-align: left;
-}
 
+/* Footer layout swap (Quick Links ← center → Hours) */
 /* Center column logo */
 .footer-center {
   display: flex;
@@ -224,6 +220,11 @@ header{
   width: 100%;
 }
 
+.hours-row span:first-child{
+  font-weight:600;
+  color:var(--logo-brown);
+}
+
 footer{
   background:#EAE0D6;
   border-top:1px solid var(--line);
@@ -238,6 +239,11 @@ footer .cols{
 }
 @media (max-width:800px){
   footer .cols{ grid-template-columns:1fr; }
+}
+
+.footer-new {
+  grid-template-columns: 1fr 1fr 1fr; /* left | center | right */
+  text-align: left;
 }
 
 /* Titles (“Quick Links”, “Hours”) use Alta */
@@ -286,26 +292,6 @@ footer h4{
   font-weight:600; color:var(--logo-brown);
 }
 .footer-links a:hover{ text-decoration:underline; }
-
-/* Hours */
-.hours-grid{
-  display:flex;
-  flex-direction: column;
-  gap:6px;
-  font-size:1.05rem;
-}
-
-.hours-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:2px 0;
-}
-
-.hours-row span:first-child{
-  font-weight:600;
-  color:var(--logo-brown);
-}
 
 /* Social row */
 .footer-social{
