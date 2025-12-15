@@ -277,10 +277,21 @@ footer h4{
 .footer-social a:hover .icon{ transform:translateY(-2px); }
 
 /* Bottom line */
-.footer-bottom{
-  margin-top:14px;
-  color:#8fa2b8;
-  font-size:.95rem;
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* space between lines */
+  font-size: .95rem;
+}
+
+.footer-bottom a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
 }
 
 /* -------------------- Mobile Behaviors -------------------- */
