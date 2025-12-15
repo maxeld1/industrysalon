@@ -251,12 +251,20 @@ footer h4{
 
 /* Hours */
 .hours-grid{
-  display:grid;
-  grid-template-columns: auto 1fr;
-  gap:8px 28px;
+  display:flex;
+  flex-direction: column;
+  gap:6px;
   font-size:1.05rem;
 }
-.hours-grid div:first-child{
+
+.hours-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:2px 0;
+}
+
+.hours-row span:first-child{
   font-weight:600;
   color:var(--logo-brown);
 }
