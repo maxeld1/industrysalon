@@ -176,6 +176,12 @@ header{
   margin: 0 auto 1.2rem;
 }
 
+.page-body {
+  text-align:center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.2rem;
+}
+
 /* -------------------- Hero -------------------- */
 .hero{
   padding:110px 0 70px;
