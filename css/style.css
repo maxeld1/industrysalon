@@ -13,8 +13,18 @@
   font-display: swap;
 }
 
-/* Body font (Inter via Google) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Body font (Arcadian font) */
+@font-face {
+  font-family: 'Arcadian';
+  src:
+          url('../assets/fonts/Arcadian.woff2') format('woff2'),
+          url('../assets/fonts/Arcadian.woff')  format('woff'),
+          url('../assets/fonts/Arcadian.otf')   format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* -------------------- CSS Variables -------------------- */
 :root{
@@ -45,10 +55,12 @@
 *{ box-sizing:border-box }
 html, body{ margin:0; padding:0; overflow-x:hidden }
 body{
-  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background:var(--bg); color:var(--text);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  font-family: 'Arcadian', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 a{ color:inherit; text-decoration:none }
 p{ color:var(--muted); line-height:1.75; margin:0 0 1rem }
