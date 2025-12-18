@@ -418,8 +418,8 @@ footer h4{
 
 /* Icons consistent */
 .footer-social .icon{
-  width:22px;
-  height:22px;
+  width:25px;
+  height:25px;
   fill:none;
   stroke:var(--logo-brown);
   stroke-width:1.6;
