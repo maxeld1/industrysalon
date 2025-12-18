@@ -2,7 +2,7 @@
    Centered-logo header, working mobile menu, consistent spacing.
 ============================================================== */
 html {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* --- Alta Heading Font --- */
@@ -348,6 +348,141 @@ footer h4{
   text-decoration:none;
 }
 .footer-bottom a:hover{ text-decoration:underline; }
+
+
+/* ==================== FOOTER (clean + uniform) ==================== */
+footer{
+  background:#EAE0D6;
+  border-top:1px solid var(--line);
+  padding:56px 0 28px;
+}
+
+/* Force the 3-column layout you want */
+footer .cols.footer-new{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr; /* links | logo | hours */
+  align-items:start;
+  column-gap: clamp(36px, 6vw, 110px);
+  row-gap: 28px;
+}
+
+/* Headings */
+footer h4{
+  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-weight:400;
+  font-size:1.15rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--logo-brown);
+  margin:0 0 16px;
+}
+
+/* LEFT: Quick Links */
+.footer-links{
+  justify-self:start;
+}
+.footer-links ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:12px;
+}
+.footer-links a{
+  font-weight:600;
+  color:var(--logo-brown);
+}
+.footer-links a:hover{ text-decoration:underline; }
+
+/* CENTER: Logo + social */
+.footer-center{
+  justify-self:center;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+.footer-logo{
+  width:190px; /* tweak bigger/smaller */
+  height:auto;
+  display:block;
+}
+.footer-social.center-social{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin:0;
+}
+
+/* Icons consistent */
+.footer-social .icon{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:var(--logo-brown);
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.95;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.footer-social a:hover .icon{
+  transform:translateY(-2px);
+  opacity:1;
+}
+
+/* RIGHT: Hours */
+.footer-hours{
+  justify-self:end;
+}
+.hours-list{
+  display:grid;
+  gap:12px;
+}
+.hours-row{
+  display:flex;
+  justify-content:space-between;
+  gap:32px;
+  min-width:260px;
+}
+.hours-row span:first-child{
+  font-weight:600;
+  color:var(--logo-brown);
+}
+
+/* Bottom line centered */
+.footer-bottom{
+  margin-top:34px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.footer-bottom a{
+  color:var(--muted);
+  text-decoration:none;
+}
+.footer-bottom a:hover{ text-decoration:underline; }
+
+/* Mobile: stack nicely */
+@media (max-width:800px){
+  footer .cols.footer-new{
+    grid-template-columns: 1fr;
+    justify-items:center;
+    text-align:center;
+  }
+  .footer-links{ justify-self:center; }
+  .footer-hours{ justify-self:center; }
+  .hours-row{
+    min-width:unset;
+    justify-content:center;
+    gap:18px;
+  }
+}
 
 /* Mobile: stack and center */
 @media (max-width:800px){
