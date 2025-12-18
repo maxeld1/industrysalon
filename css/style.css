@@ -166,6 +166,7 @@ header{
 }
 .btn:hover{ transform:translateY(-1px) }
 .btn-primary{
+  align-items: center;
   background:transparent;
   border:1px solid var(--brand);
   color:var(--brand2);
