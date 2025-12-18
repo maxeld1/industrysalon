@@ -131,6 +131,21 @@ header{
 
 .nav-right{ display:flex; justify-content:flex-end; align-items:center; gap:16px }
 
+.nav-utility {
+  font-family: 'Alta', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--logo-brown);
+  padding: 6px 10px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.nav-utility:hover {
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+
 /* Optional square gradient “dot” logo (unused when image logo is present) */
 .logo{
   width:38px; height:38px; border-radius:12px;
