@@ -360,7 +360,7 @@ footer{
 /* Force the 3-column layout you want */
 footer .cols.footer-new{
   display:grid;
-  grid-template-columns: 1fr auto 1fr; /* links | logo | hours */
+  grid-template-columns: 1fr 1fr 1fr; /* links | logo | hours */
   align-items:start;
   column-gap: clamp(36px, 6vw, 110px);
   row-gap: 28px;
