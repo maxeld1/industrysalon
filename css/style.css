@@ -5,6 +5,10 @@ html {
   font-size: 20px;
 }
 
+@media (max-width:480px){
+  html{ font-size: 18px; }
+}
+
 /* --- Alta Heading Font --- */
 @font-face {
   font-family: 'Alta';
