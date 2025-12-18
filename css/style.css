@@ -1,6 +1,9 @@
 /* ===== Industry Salon — Luxe Beige (Alta + Inter) =====
    Centered-logo header, working mobile menu, consistent spacing.
 ============================================================== */
+html {
+  font-size: 18px;
+}
 
 /* --- Alta Heading Font --- */
 @font-face {
