@@ -580,3 +580,9 @@ footer .cols.footer-new{
   }
 }
 
+/* ===== MOBILE: hide Book Now button in header ===== */
+@media (max-width:768px){
+  header .cta-book{
+    display: none !important;
+  }
+}
