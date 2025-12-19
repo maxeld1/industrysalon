@@ -235,6 +235,13 @@ header{
   transform:translateY(-2px);
 }
 
+.btn-alta{
+  font-family: 'Alta', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: 0.04em; /* optional — matches your nav vibe */
+  text-transform: uppercase; /* optional but looks luxe */
+}
+
 .page-title {
   text-align:center;
   margin: 0 auto 1.2rem;
