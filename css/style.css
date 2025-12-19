@@ -102,6 +102,17 @@ header{
   border-bottom:1px solid var(--line);
   transition:box-shadow .2s ease;
 }
+
+/* Desktop: keep header visible at all times */
+@media (min-width:769px){
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:3000;
+  }
+  body{ padding-top: var(--header-h); }
+}
+
 .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 0 }
 
 /* Centered logo, split nav layout */
