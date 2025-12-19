@@ -2,7 +2,7 @@
    Centered-logo header, working mobile menu, consistent spacing.
 ============================================================== */
 html {
-  font-size: 22px;
+  font-size: 21px;
 }
 
 @media (max-width:480px){
