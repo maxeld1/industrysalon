@@ -39,7 +39,7 @@
   --btn-pad-x:1.25rem;
 
   /* Card surfaces */
-  --card-bg: rgba(255, 255, 255, 0.78);
+  --card-bg: rgba(255, 255, 255, 0.72);
   --card-border: rgba(228, 214, 200, 0.8);
   --card-shadow:
           0 14px 30px rgba(89, 78, 69, 0.10),
