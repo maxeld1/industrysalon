@@ -88,6 +88,39 @@ h1{ font-size:clamp(2.6rem,4.8vw,4.2rem); line-height:1.12 }
 h2{ font-size:clamp(1.9rem,3.2vw,2.6rem); line-height:1.22 }
 h3{ font-size:1.45rem; line-height:1.25 }
 
+/* ================= HEADER TYPOGRAPHY BOOST ================= */
+
+header a,
+header .nav a,
+header .nav-utility,
+header .btn,
+header .menu-toggle {
+  font-family: 'Alta', Georgia, 'Times New Roman', serif;
+  font-weight: 500;                 /* thicker but still elegant */
+  letter-spacing: 0.04em;           /* improves legibility */
+  color: var(--logo-brown);
+}
+
+.nav-left a,
+.nav-utility {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.btn,
+.btn-primary {
+  font-family: 'Alta', serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+header {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 /* -------------------- Layout Helpers -------------------- */
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 22px }
 .section{ padding:92px 0 }
