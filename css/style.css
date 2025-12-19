@@ -150,8 +150,22 @@ header{
 .nav-right{ display:flex; justify-content:flex-end; align-items:center; gap:16px }
 
 @media (max-width:768px){
+  /* Make the right side actually span to the right edge */
+  .nav-centered{
+    grid-template-columns: auto 1fr auto; /* left | logo | right */
+  }
+
+  /* Ensure the right cell aligns to the far right */
   .nav-right{
+    justify-self:end;
+    display:flex;
     justify-content:flex-end;
+    align-items:center;
+  }
+
+  /* If your logo is in the middle column, keep it centered */
+  .brand-center{
+    justify-self:center;
   }
 }
 
