@@ -138,6 +138,12 @@ header{
 
 .nav-right{ display:flex; justify-content:flex-end; align-items:center; gap:16px }
 
+@media (max-width:768px){
+  .nav-right{
+    justify-content:flex-end;
+  }
+}
+
 .nav-utility {
   font-family: 'Alta', serif;
   font-size: 0.95rem;
