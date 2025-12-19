@@ -507,7 +507,7 @@ footer h4{
 /* Mobile header layout + menu panel */
 @media (max-width:768px){
   .nav-centered{ grid-template-columns:1fr auto 1fr; }
-  .menu-toggle{ display:inline-flex; align-items:center; justify-content:center; margin-left:auto; margin-right: 6px}
+  .menu-toggle{ display:inline-flex; align-items:center; justify-content:center; margin-left:auto; margin-right: 10px}
   .nav-left{ display:block; }
   .site-nav{
     position:fixed; top:var(--header-h); left:0; right:0;
