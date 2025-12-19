@@ -108,12 +108,23 @@ h3{ font-size:1.45rem; line-height:1.25; }
 /* -------------------- Header -------------------- */
 /* Desktop: fixed header */
 header{
-  position:fixed;
-  top:0; left:0; right:0;
-  z-index:3000;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3000;
+
+  background: rgba(255, 255, 255, 0.65); /* translucent */
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border-bottom: 1px solid rgba(228, 214, 200, 0.6);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+
+  transition:
+          background 0.3s ease,
+          backdrop-filter 0.3s ease,
+          box-shadow 0.3s ease;
 }
 
 /* Body offset for fixed header */
@@ -505,3 +516,16 @@ footer .cols.footer-new{
 }
 
 .no-scroll{ overflow:hidden; }
+
+@media (max-width:768px){
+  /* Mobile dropdown menu anchored to the right */
+  #mobile-menu.site-nav{
+    position: fixed;
+    top: var(--header-h-mobile);
+    right: 22px;     /* matches container padding */
+    left: auto;      /* IMPORTANT */
+    width: 260px;
+    z-index: 4000;
+  }
+}
+
