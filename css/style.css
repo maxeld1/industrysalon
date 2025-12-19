@@ -153,6 +153,15 @@ header{
   transform: translateY(-1px);
 }
 
+/* Visibility helpers */
+.desktop-only{ display:inline-flex; }
+.mobile-only{ display:none; }
+
+@media (max-width:768px){
+  .desktop-only{ display:none; }
+  .mobile-only{ display:block; }
+}
+
 /* Optional square gradient “dot” logo (unused when image logo is present) */
 .logo{
   width:38px; height:38px; border-radius:12px;
