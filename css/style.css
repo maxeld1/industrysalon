@@ -509,7 +509,7 @@ footer .cols.footer-new{
   /* Hide desktop inline links, show hamburger */
   .site-nav{ position:fixed; }
   .site-nav ul{ display:flex; flex-direction:column; gap:6px; }
-  .menu-toggle{ display:inline-flex; }
+  .menu-toggle{ display:inline-flex; margin-right: calc(10px + env(safe-area-inset-right));}
 
   /* Dropdown panel anchored under hamburger (right side) */
   .site-nav{
