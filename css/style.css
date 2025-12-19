@@ -446,16 +446,25 @@ footer h4{
   text-decoration:underline;
 }
 
-/* Icons match footer style */
+/* CONTACT PAGE ICONS */
+.contact-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-size:1.05rem;
+  color:var(--logo-brown);
+}
+
 .contact-icon{
   width:22px;
   height:22px;
+  min-width:22px;
   fill:none;
   stroke:var(--logo-brown);
   stroke-width:1.6;
   stroke-linecap:round;
   stroke-linejoin:round;
-  flex-shrink:0;
 }
 
 /* Alta font for CTA */
