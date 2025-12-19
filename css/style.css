@@ -168,12 +168,6 @@ header{
   .nav-left{ justify-self:start !important; }
 }
 
-  /* If your logo is in the middle column, keep it centered */
-  .brand-center{
-    justify-self:center;
-  }
-}
-
 .nav-utility {
   font-family: 'Alta', serif;
   font-size: 0.95rem;
@@ -481,3 +475,41 @@ footer h4{
 
 /* Optional: body scroll lock when menu open (if you toggle .no-scroll on body in JS) */
 .no-scroll{ overflow:hidden }
+
+/* ===== MOBILE HEADER: force hamburger to far right ===== */
+@media (max-width:768px){
+  /* make the top bar a simple flex row */
+  header .container.nav.nav-centered{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+  }
+
+  /* left menu panel is fixed; don't let it take space in the header row */
+  header .nav-left.site-nav{
+    position:fixed !important; /* ensures it's out of flow */
+    left:0; right:0;
+  }
+
+  /* logo stays on the left */
+  header .brand.brand-center{
+    display:flex !important;
+    justify-content:flex-start !important;
+    flex:0 0 auto !important;
+  }
+
+  /* right side hugs the edge */
+  header .nav-right{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    flex:0 0 auto !important;
+    margin-left:auto !important;
+    gap:12px !important;
+  }
+
+  header .menu-toggle{
+    margin-left:0 !important;
+  }
+}
