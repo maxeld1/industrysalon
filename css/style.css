@@ -586,3 +586,9 @@ footer .cols.footer-new{
     display: none !important;
   }
 }
+
+@media (max-width:768px){
+  header .menu-toggle{
+    margin-right: 12px; /* controls distance from screen edge */
+  }
+}
