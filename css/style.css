@@ -126,6 +126,13 @@ header {
   text-rendering: optimizeLegibility;
 }
 
+/* Ensure body font consistency for lists */
+ul, li {
+  font-family: inherit;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 /* -------------------- Layout Helpers -------------------- */
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 22px }
 .section{ padding:92px 0 }
@@ -318,6 +325,22 @@ header{
   border-radius:24px; box-shadow:var(--shadow); overflow:hidden;
 }
 .showcase img{ display:block; width:100%; height:auto }
+
+.card ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li{
+  font-size: 1rem;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.card li:last-child{
+  border-bottom: none;
+}
 
 /* ==================== FOOTER (clean + uniform) ==================== */
 footer{
