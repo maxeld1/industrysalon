@@ -37,6 +37,13 @@
   --btn-radius:14px;
   --btn-pad-y:.75rem;
   --btn-pad-x:1.25rem;
+
+  /* Card surfaces */
+  --card-bg: rgba(255, 255, 255, 0.78);
+  --card-border: rgba(228, 214, 200, 0.8);
+  --card-shadow:
+          0 14px 30px rgba(89, 78, 69, 0.10),
+          0 4px 10px rgba(89, 78, 69, 0.06);
 }
 
 /* Base font sizing */
@@ -283,25 +290,43 @@ header .nav{
 
 /* -------------------- Cards -------------------- */
 .card{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:28px;
-  box-shadow:var(--shadow);
-  transition:transform .2s ease, box-shadow .2s ease;
+  background: var(--card-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+
+  box-shadow: var(--card-shadow);
+  transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background 0.25s ease;
 }
 .card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(89,78,69,.12), 0 3px 8px rgba(89,78,69,.08);
+  transform: translateY(-3px);
+  box-shadow:
+          0 20px 40px rgba(89, 78, 69, 0.14),
+          0 6px 14px rgba(89, 78, 69, 0.08);
 }
 
-.card ul{ list-style:none; padding:0; margin:0; }
-.card li{
-  font-size:1rem;
-  padding:6px 0;
-  border-bottom:1px solid var(--line);
+.card ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.card li:last-child{ border-bottom:none; }
+
+.card li{
+  font-size: 1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(228, 214, 200, 0.6);
+  color: var(--text);
+}
+
+.card li:last-child{
+  border-bottom: none;
+}
 
 /* -------------------- Page Titles -------------------- */
 .page-title{
