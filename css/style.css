@@ -238,6 +238,27 @@ header .nav{
   background:transparent;
 }
 
+.section-title {
+  font-family: 'Alta', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--logo-brown);
+  margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--line);
+  margin: 16px auto 0;
+}
+
+
 /* Desktop/mobile visibility helpers */
 .desktop-only{ display:inline-flex; }
 .mobile-only{ display:none; }
