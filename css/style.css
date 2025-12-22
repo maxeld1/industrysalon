@@ -232,7 +232,7 @@ header .nav{
 .site-nav a:hover,
 .site-nav a.is-active,
 .nav-utility:hover{
-  letter-spacing:0.08em;
+  letter-spacing:0.12em;
   color:var(--brand);
   transform:translateY(-2px);
   background:transparent;
