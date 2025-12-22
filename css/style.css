@@ -262,6 +262,7 @@ header .nav{
   font-weight:500;
   letter-spacing:0.05em;
   text-transform:uppercase;
+  white-space: nowrap;
 }
 
 .btn:hover{ transform:translateY(-1px); }
