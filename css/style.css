@@ -592,3 +592,24 @@ footer .cols.footer-new{
     margin-right: 12px; /* controls distance from screen edge */
   }
 }
+
+@media (max-width: 768px) {
+  /* Make header a positioning context */
+  header .container.nav {
+    position: relative;
+  }
+
+  /* Absolutely center the logo */
+  header .brand.brand-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  /* Ensure hamburger stays on the right */
+  header .nav-right {
+    margin-left: auto;
+    z-index: 3;
+  }
+}
