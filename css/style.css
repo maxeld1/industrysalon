@@ -265,36 +265,47 @@ header .nav{
 /* -------------------- Hamburger Button -------------------- */
 .menu-toggle{
   display:none;
+  align-items:center;
+  justify-content:center;
   background:rgba(255,255,255,.70);
-  border:1px solid rgba(228,214,200,.85);
-  border-radius:10px;
-  padding:6px 8px;
-  box-shadow:var(--shadow);
+  border:1px solid rgba(228,214,200,.70);
+  border-radius:12px;
+  padding:8px 10px;
+  box-shadow:0 12px 26px rgba(89,78,69,.12), 0 3px 8px rgba(89,78,69,.06);
   cursor:pointer;
-  margin-right:12px; /* your desired margin from edge */
+  color:var(--logo-brown);
 }
 @media (max-width:768px){
   .menu-toggle{ display:inline-flex; }
 }
 
 /* If your SVG uses 3 lines with classes line1/line2/line3 */
-.menu-toggle .line{
-  transition: transform .22s ease, opacity .18s ease;
-  transform-origin: 12px 12px;
+.menu-icon .line{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  transform-origin:12px 12px;
+  transition:transform .22s ease, opacity .18s ease;
 }
-.menu-toggle.is-open .line1{ transform: translateY(6px) rotate(45deg); }
+/* Morph hamburger -> X */
+.menu-toggle.is-open .line1{ transform: translateY(5px) rotate(45deg); }
 .menu-toggle.is-open .line2{ opacity:0; }
-.menu-toggle.is-open .line3{ transform: translateY(-6px) rotate(-45deg); }
+.menu-toggle.is-open .line3{ transform: translateY(-5px) rotate(-45deg); }
 
-/* -------------------- Mobile Menu (FULL WIDTH) -------------------- */
+/* ===================== MOBILE MENU (FULL WIDTH) ===================== */
 @media (max-width:768px){
-  /* Take nav out of header flow */
-  .site-nav{
+
+  /* Show hamburger */
+  .menu-toggle{ display:inline-flex; }
+
+  /* Full-width menu panel */
+  #mobile-menu.site-nav{
     position:fixed;
     top:var(--header-h-mobile);
     left:0;
     right:0;
-    width:auto;
+    width:100vw;
     z-index:2500;
 
     background:rgba(255,255,255,.86);
@@ -310,40 +321,53 @@ header .nav{
     transition:transform .2s ease, opacity .2s ease;
   }
 
-  .site-nav.is-open{
+  #mobile-menu.site-nav.is-open{
     transform:translateY(0);
     opacity:1;
     pointer-events:auto;
   }
 
-  .site-nav ul{
+  #mobile-menu.site-nav ul{
     display:grid;
     gap:8px;
-    padding:14px 22px; /* match container padding */
+    padding:14px 22px;
     margin:0;
     list-style:none;
   }
 
-  .site-nav a{
+  #mobile-menu.site-nav a{
     display:block;
     padding:14px 12px;
     border-radius:12px;
   }
-  .site-nav a:hover{
+
+  #mobile-menu.site-nav a:hover{
     background:rgba(246,239,232,.80);
   }
 
-  /* Remove caret if you previously had one */
-  .site-nav::before{ display:none !important; }
+  #mobile-menu.site-nav::before{ display:none !important; }
 
-  /* Optional mobile CTA block inside menu */
   .mobile-cta .btn{
     width:100%;
     margin-top:6px;
   }
 
-  .btn, .site-nav a{ -webkit-tap-highlight-color:transparent; }
+  .btn, #mobile-menu.site-nav a{ -webkit-tap-highlight-color:transparent; }
 }
+
+/* Hamburger -> X (keep outside media query if you want it to work at all sizes) */
+.menu-icon .line{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  transform-origin:12px 12px;
+  transition:transform .22s ease, opacity .18s ease;
+}
+.menu-toggle.is-open .line1{ transform: translateY(5px) rotate(45deg); }
+.menu-toggle.is-open .line2{ opacity:0; }
+.menu-toggle.is-open .line3{ transform: translateY(-5px) rotate(-45deg); }
+
 
 /* Scroll lock */
 .no-scroll{ overflow:hidden; }
