@@ -507,8 +507,8 @@ footer .cols.footer-new{
 .contact-item a:hover{ text-decoration:underline; }
 
 .contact-icon{
-  width:24px;
-  height:24px;
+  width:30px;
+  height:30px;
   min-width:22px;
   fill:none;
   stroke:var(--logo-brown);
