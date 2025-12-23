@@ -482,22 +482,21 @@ footer .cols.footer-new{
 
 /* -------------------- Contact Page -------------------- */
 .contact-info{
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;              /* centers the block itself */
-  display: flex;
-  flex-direction: column;
-  align-items: center;          /* centers children horizontally */
-  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* keeps text left-aligned */
+  gap:22px;                 /* vertical spacing between rows */
+  max-width:520px;
+  margin:0 auto;
 }
 
 .contact-item{
-  display: inline-flex;         /* key: shrink-to-content so it can truly center */
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: auto;                  /* don't stretch full width */
-  max-width: 100%;
+  display:flex;
+  align-items:flex-start;   /* icon alignment with multi-line text */
+  gap:14px;                 /* space between icon + text */
+  line-height:1.6;
+  font-size:1.05rem;
+  color:var(--logo-brown);
 }
 
 .contact-item .contact-text{
