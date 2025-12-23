@@ -144,20 +144,54 @@ header .nav{
   padding:10px 0;
   position:relative; /* enables absolute-centering logo on mobile */
 }
+
+/* MOBILE: 2-row header, logo on top, actions under it */
 @media (max-width:768px){
   header .nav{
-    min-height:var(--header-h-mobile);
-    display:flex;
-    justify-content:space-between;
-    padding:10px 0;
+    display:grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    padding: 10px 0 12px;
   }
 
-  header .nav-right{
-    margin-left:auto;
+  /* Logo centered in row 1 */
+  header .brand.brand-center{
+    position: static !important;
+    transform: none !important;
+    justify-content: center;
+    grid-row: 1;
   }
+
+  /* Row 2 container */
+  .mobile-header-actions{
+    grid-row: 2;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 22px; /* match container padding */
+    gap: 12px;
+  }
+
+  /* Put menu left and book right */
+  header .nav-right{
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Mobile book button sizing */
+  .mobile-book{
+    padding: .7rem 1.05rem;
+    font-size: .9rem;
+    letter-spacing: .05em;
+  }
+
   header .menu-toggle{
     margin-right:16px;
   }
+
+  /* Hide desktop-only actions on mobile */
+  .desktop-only{ display:none !important; }
 }
 
 /* Logo */
@@ -308,7 +342,7 @@ header .nav{
 @media (max-width:768px){
   #mobile-menu.site-nav{
     position:fixed;
-    top:var(--header-h-mobile);
+    top: var(--header-h);
     left:0;
     right:0;
     width:100vw;
