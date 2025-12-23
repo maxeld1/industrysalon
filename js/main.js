@@ -34,11 +34,15 @@
     const toggle = (force)=>{
       const open = (typeof force==='boolean') ? force : !nav.classList.contains('is-open');
       nav.classList.toggle('is-open', open);
+
+      menuBtn.classList.toggle('is-open', open); // ✅ add this
+
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       open ? lock() : unlock();
       setTimeout(setH, 50);
       log('menu', open ? 'opened' : 'closed');
     };
+
 
     menuBtn.addEventListener('click', ()=>toggle());
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>toggle(false)));
