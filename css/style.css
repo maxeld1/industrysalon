@@ -275,11 +275,12 @@ header .nav{
   cursor:pointer;
   color:var(--logo-brown);
 }
+
 @media (max-width:768px){
   .menu-toggle{ display:inline-flex; }
 }
 
-/* If your SVG uses 3 lines with classes line1/line2/line3 */
+/* Hamburger icon line styling (requires 3 paths with line1/line2/line3) */
 .menu-icon .line{
   fill:none;
   stroke:currentColor;
@@ -288,6 +289,7 @@ header .nav{
   transform-origin:12px 12px;
   transition:transform .22s ease, opacity .18s ease;
 }
+
 /* Morph hamburger -> X */
 .menu-toggle.is-open .line1{ transform: translateY(5px) rotate(45deg); }
 .menu-toggle.is-open .line2{ opacity:0; }
@@ -295,11 +297,6 @@ header .nav{
 
 /* ===================== MOBILE MENU (FULL WIDTH) ===================== */
 @media (max-width:768px){
-
-  /* Show hamburger */
-  .menu-toggle{ display:inline-flex; }
-
-  /* Full-width menu panel */
   #mobile-menu.site-nav{
     position:fixed;
     top:var(--header-h-mobile);
@@ -308,7 +305,7 @@ header .nav{
     width:100vw;
     z-index:2500;
 
-    background:rgba(255,255,255,.86);
+    background:rgba(255,255,255,.92);
     backdrop-filter: blur(12px) saturate(140%);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
 
@@ -328,11 +325,11 @@ header .nav{
   }
 
   #mobile-menu.site-nav ul{
+    list-style:none;
+    margin:0;
+    padding:14px 22px;
     display:grid;
     gap:8px;
-    padding:14px 22px;
-    margin:0;
-    list-style:none;
   }
 
   #mobile-menu.site-nav a{
@@ -345,8 +342,10 @@ header .nav{
     background:rgba(246,239,232,.80);
   }
 
+  /* Ensure no old caret/triangle shows */
   #mobile-menu.site-nav::before{ display:none !important; }
 
+  /* Optional: if you add a CTA block inside the menu */
   .mobile-cta .btn{
     width:100%;
     margin-top:6px;
