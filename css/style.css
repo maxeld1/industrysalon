@@ -438,8 +438,8 @@ footer .cols.footer-new{
 }
 
 .footer-social .icon{
-  width:25px;
-  height:25px;
+  width:30px;
+  height:30px;
   fill:none;
   stroke:var(--logo-brown);
   stroke-width:1.6;
