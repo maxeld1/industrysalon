@@ -134,6 +134,13 @@ header .nav{
     justify-content:space-between;
     padding:10px 0;
   }
+
+  header .nav-right{
+    margin-left:auto;
+  }
+  header .menu-toggle{
+    margin-right:16px;
+  }
 }
 
 /* Logo */
@@ -280,21 +287,6 @@ header .nav{
   .menu-toggle{ display:inline-flex; }
 }
 
-/* Hamburger icon line styling (requires 3 paths with line1/line2/line3) */
-.menu-icon .line{
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2;
-  stroke-linecap:round;
-  transform-origin:12px 12px;
-  transition:transform .22s ease, opacity .18s ease;
-}
-
-/* Morph hamburger -> X */
-.menu-toggle.is-open .line1{ transform: translateY(5px) rotate(45deg); }
-.menu-toggle.is-open .line2{ opacity:0; }
-.menu-toggle.is-open .line3{ transform: translateY(-5px) rotate(-45deg); }
-
 /* ===================== MOBILE MENU (FULL WIDTH) ===================== */
 @media (max-width:768px){
   #mobile-menu.site-nav{
@@ -360,8 +352,9 @@ header .nav{
   stroke:currentColor;
   stroke-width:2;
   stroke-linecap:round;
-  transform-origin:12px 12px;
-  transition:transform .22s ease, opacity .18s ease;
+  transform-box: fill-box;          /* IMPORTANT for Safari */
+  transform-origin: 50% 50%;        /* IMPORTANT for Safari */
+  transition: transform .22s ease, opacity .18s ease;
 }
 .menu-toggle.is-open .line1{ transform: translateY(5px) rotate(45deg); }
 .menu-toggle.is-open .line2{ opacity:0; }
