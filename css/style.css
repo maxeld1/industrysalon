@@ -498,6 +498,7 @@ footer .cols.footer-new{
   gap:12px;
   font-size:1.05rem;
   color:var(--logo-brown);
+  white-space: nowrap;
 }
 
 .contact-item a{
