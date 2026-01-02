@@ -240,9 +240,7 @@ header .nav{
 
 /* Header typography */
 .site-nav a,
-.nav-utility{
-  font-size:1.25rem;
-}
+.nav-utility,
 .cta-book,
 .menu-toggle{
   font-family:'Alta', Georgia, 'Times New Roman', serif;
