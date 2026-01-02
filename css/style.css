@@ -601,32 +601,27 @@ footer .cols.footer-new{
 
 @media (max-width:768px){
   .mobile-header-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    width:100%;
-    padding:8px 0;
+    padding:6px 0;      /* tighter row */
+    gap:10px;
   }
 
-  /* Book Now takes most of the space */
   .mobile-header-actions .mobile-book{
     flex:1;
-    text-align:center;
-    padding:12px 16px;
-    font-size:.95rem;
-    letter-spacing:.06em;
+    padding:10px 14px;  /* smaller */
+    font-size:.85rem;   /* smaller text */
+    border-radius:14px;
+    line-height:1;
   }
 
-  /* Hamburger stays compact on the right */
   .mobile-header-actions .menu-toggle{
-    flex:0 0 auto;
-    width:44px;
-    height:44px;
-    padding:0;
+    width:42px;
+    height:42px;
     border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
   }
+}
+
+body{ padding-top: var(--header-h); }
+@media (max-width:768px){
+  body{ padding-top: var(--header-h-mobile); }
 }
 

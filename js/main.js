@@ -25,7 +25,12 @@
 
     // Set --header-h for mobile offset
     const root = document.documentElement;
-    const setH = () => root.style.setProperty('--header-h', (header.offsetHeight||72) + 'px');
+    const setH = () => {
+      const h = (header.offsetHeight || 72) + 'px';
+      root.style.setProperty('--header-h', h);        // desktop + general
+      root.style.setProperty('--header-h-mobile', h); // mobile should match actual header height
+    };
+
     setH(); addEventListener('resize', setH, {passive:true}); addEventListener('orientationchange', setH);
 
     const lock = ()=>document.body.classList.add('no-scroll');
