@@ -65,7 +65,8 @@ header::before{
 }
 
 *{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; overflow-x:hidden; background: var(--bg); }
+html{background: var(--header-bg);}
+body{ margin:0; padding:0; overflow-x:hidden; background: var(--bg); }
 
 @font-face{
   font-family:'Alta';
