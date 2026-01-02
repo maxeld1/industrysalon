@@ -614,7 +614,7 @@ footer .cols.footer-new{
   .mobile-header-actions .mobile-book{
     flex:1;
     text-align:center;
-    padding:8px 12px;
+    padding:8px 16px;
     font-size:.95rem;
     letter-spacing:.06em;
   }
