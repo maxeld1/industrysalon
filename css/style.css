@@ -456,6 +456,7 @@ header .nav{
   padding:28px;
   box-shadow:var(--glass-shadow);
   transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  text-align:center;
 }
 .card:hover{
   transform:translateY(-3px);
