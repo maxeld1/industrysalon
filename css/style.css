@@ -202,15 +202,15 @@ header .nav{
   justify-content:center;
 }
 .brand-logo{ height:64px; width:auto; display:block; }
-@media (max-width:768px){
-  .brand{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:2;
-  }
-  .brand-logo{ height:44px; }
-}
+/*@media (max-width:768px){*/
+/*  .brand{*/
+/*    position:absolute;*/
+/*    left:50%;*/
+/*    transform:translateX(-50%);*/
+/*    z-index:2;*/
+/*  }*/
+/*  .brand-logo{ height:44px; }*/
+/*}*/
 
 /* Nav sides */
 .nav-right{
@@ -596,44 +596,76 @@ footer .cols.footer-new{
 .contact-item span,
 .contact-item a{ display:block; }
 
-/* ===================== MOBILE HEADER ACTION ROW ===================== */
-.mobile-header-actions{
-  display:none;
-}
-
+/* ===================== MOBILE HEADER (CLEAN) ===================== */
 @media (max-width:768px){
+
+  /* Two-row header: logo then actions */
+  header .nav{
+    display:grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    padding: 12px 0 14px;
+  }
+
+  /* Logo row */
+  header .brand.brand-center{
+    position: static !important;
+    transform: none !important;
+    display:flex;
+    justify-content:center;
+  }
+  .brand-logo{ height:44px; }
+
+  /* Make nav-right full width so actions can span container */
+  header .nav-right{
+    width:100%;
+    margin-left:0 !important;
+    justify-content:stretch;
+  }
+
+  /* Action row */
   .mobile-header-actions{
     display:flex;
     align-items:center;
     gap:12px;
     width:100%;
-    padding:8px 0;
+    padding: 0;           /* IMPORTANT: container already has side padding */
   }
 
-  /* Book Now takes most of the space */
+  /* Book Now fills remaining space (not huge) */
   .mobile-header-actions .mobile-book{
     flex:1;
+    min-width:0;
     text-align:center;
-    padding:10px 14px;
-    font-size:.95rem;
-    letter-spacing:.06em;
+
+    /* tighter than .btn defaults */
+    padding: 12px 14px;
+    font-size: .92rem;
+    letter-spacing: .06em;
+    border-radius: 16px;
+    line-height: 1.1;
   }
 
-  /* Hamburger stays compact on the right */
+  /* Hamburger stays a neat square on the right */
   .mobile-header-actions .menu-toggle{
-    flex:0 0 auto;
-    width:44px;
-    height:44px;
+    flex:0 0 46px;
+    width:46px;
+    height:46px;
     padding:0;
-    border-radius:14px;
+    border-radius: 16px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    /* slightly lighter visual weight */
+    box-shadow: 0 10px 22px rgba(89,78,69,.10), 0 3px 8px rgba(89,78,69,.05);
   }
 }
 
+/* ===================== BODY OFFSET (NO LEAKING) ===================== */
+/* Use the same var everywhere; your JS already sets --header-h dynamically */
 body{ padding-top: var(--header-h); }
-@media (max-width:768px){
-  body{ padding-top: var(--header-h-mobile); }
-}
+
 
