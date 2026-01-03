@@ -668,4 +668,11 @@ footer .cols.footer-new{
 /* Use the same var everywhere; your JS already sets --header-h dynamically */
 body{ padding-top: var(--header-h); }
 
+@media (max-width:768px){
+  .mobile-header-actions .mobile-book{
+    flex:1;
+    margin-right:2px; /* micro-adjust to match visual balance */
+  }
+}
+
 
