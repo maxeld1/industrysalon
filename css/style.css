@@ -147,53 +147,53 @@ header .nav{
 }
 
 /* MOBILE: 2-row header, logo on top, actions under it */
-@media (max-width:768px){
-  header .nav{
-    display:grid !important;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 8px;
-    padding: 10px 0 12px;
-  }
+/*@media (max-width:768px){*/
+/*  header .nav{*/
+/*    display:grid !important;*/
+/*    grid-template-columns: 1fr;*/
+/*    grid-template-rows: auto auto;*/
+/*    row-gap: 8px;*/
+/*    padding: 10px 0 12px;*/
+/*  }*/
 
-  /* Logo centered in row 1 */
-  header .brand.brand-center{
-    position: static !important;
-    transform: none !important;
-    justify-content: center;
-    grid-row: 1;
-  }
+/*  !* Logo centered in row 1 *!*/
+/*  header .brand.brand-center{*/
+/*    position: static !important;*/
+/*    transform: none !important;*/
+/*    justify-content: center;*/
+/*    grid-row: 1;*/
+/*  }*/
 
-  /* Row 2 container */
-  .mobile-header-actions{
-    grid-row: 2;
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    padding: 0 22px; /* match container padding */
-    gap: 12px;
-  }
+/*  !* Row 2 container *!*/
+/*  .mobile-header-actions{*/
+/*    grid-row: 2;*/
+/*    display:flex;*/
+/*    align-items:center;*/
+/*    justify-content: space-between;*/
+/*    padding: 0 22px; !* match container padding *!*/
+/*    gap: 12px;*/
+/*  }*/
 
-  /* Put menu left and book right */
-  header .nav-right{
-    margin-left: 0 !important;
-    width: 100%;
-  }
+/*  !* Put menu left and book right *!*/
+/*  header .nav-right{*/
+/*    margin-left: 0 !important;*/
+/*    width: 100%;*/
+/*  }*/
 
-  /* Mobile book button sizing */
-  .mobile-book{
-    padding: .7rem 1.05rem;
-    font-size: .9rem;
-    letter-spacing: .05em;
-  }
+/*  !* Mobile book button sizing *!*/
+/*  .mobile-book{*/
+/*    padding: .7rem 1.05rem;*/
+/*    font-size: .9rem;*/
+/*    letter-spacing: .05em;*/
+/*  }*/
 
-  header .menu-toggle{
-    margin-right:16px;
-  }
+/*  header .menu-toggle{*/
+/*    margin-right:16px;*/
+/*  }*/
 
-  /* Hide desktop-only actions on mobile */
-  .desktop-only{ display:none !important; }
-}
+/*  !* Hide desktop-only actions on mobile *!*/
+/*  .desktop-only{ display:none !important; }*/
+/*}*/
 
 /* Logo */
 .brand{
