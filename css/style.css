@@ -239,6 +239,13 @@ header .nav{
   .mobile-only{ display:block; }
 }
 
+/* Mobile header actions: hidden on desktop, visible on mobile */
+.mobile-header-actions{ display:none; }
+
+@media (max-width:768px){
+  .mobile-header-actions{ display:flex; }
+}
+
 /* Header typography */
 .site-nav a,
 .nav-utility,
@@ -742,8 +749,6 @@ body{ padding-top: var(--header-h); }
   }
 }
 
-.mobile-header-actions{
-  display: none !important;
-}
+
 
 
