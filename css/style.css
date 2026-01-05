@@ -664,6 +664,46 @@ footer .cols.footer-new{
   }
 }
 
+@media (max-width:768px){
+  /* The dropdown panel should NOT take up a grid row in the header */
+  header .nav > #mobile-menu{
+    position: fixed;   /* you already do fixed in the menu section */
+    top: var(--header-h-mobile);
+    left: 0;
+    right: 0;
+  }
+
+  /* Make the header truly 2 rows: logo row + actions row */
+  header .nav{
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    padding: 10px 0 12px;
+  }
+
+  /* Row 1 = logo */
+  header .brand.brand-center{
+    grid-row: 1;
+    justify-content: center;
+  }
+
+  /* Row 2 = actions */
+  header .nav-right{
+    grid-row: 2;
+    width: 100%;
+  }
+
+  /* Make the action row match container padding (same on left/right) */
+  .mobile-header-actions{
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 22px;  /* same as .container */
+  }
+}
+
 /* ===================== BODY OFFSET (NO LEAKING) ===================== */
 /* Use the same var everywhere; your JS already sets --header-h dynamically */
 body{ padding-top: var(--header-h); }
