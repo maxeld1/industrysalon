@@ -343,7 +343,7 @@ header .nav{
 @media (max-width:768px){
   #mobile-menu.site-nav{
     position:fixed;
-    top: var(--header-h);
+    top: calc(env(safe-area-inset-top) + var(--header-h-mobile));
     left:0;
     right:0;
     width:100vw;
@@ -667,40 +667,66 @@ footer .cols.footer-new{
 @media (max-width:768px){
   /* The dropdown panel should NOT take up a grid row in the header */
   header .nav > #mobile-menu{
-    position: fixed;   /* you already do fixed in the menu section */
-    top: var(--header-h-mobile);
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + var(--header-h-mobile));
     left: 0;
     right: 0;
   }
 
-  /* Make the header truly 2 rows: logo row + actions row */
+  /* True 2-row header: logo then action row */
   header .nav{
     display: grid !important;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    row-gap: 8px;
-    padding: 10px 0 12px;
+    row-gap: 10px;
+    padding: 12px 0 14px;
+    min-height: auto;
   }
 
-  /* Row 1 = logo */
+  /* Row 1: logo centered */
   header .brand.brand-center{
     grid-row: 1;
     justify-content: center;
+    position: static !important;
+    transform: none !important;
   }
 
-  /* Row 2 = actions */
+  /* Row 2: actions */
   header .nav-right{
     grid-row: 2;
     width: 100%;
+    margin-left: 0 !important;
   }
 
-  /* Make the action row match container padding (same on left/right) */
+  /* Action row matches container padding */
   .mobile-header-actions{
-    display: flex !important;
+    display: flex;
     align-items: center;
     gap: 12px;
     width: 100%;
-    padding: 0 22px;  /* same as .container */
+    padding: 0 22px;
+  }
+
+  /* Book Now fills space, but not oversized */
+  .mobile-header-actions .mobile-book{
+    flex: 1;
+    min-width: 0;
+    padding: 11px 14px;
+    font-size: .90rem;
+    line-height: 1.1;
+    border-radius: 16px;
+  }
+
+  /* Hamburger compact square on right */
+  .mobile-header-actions .menu-toggle{
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
