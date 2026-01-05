@@ -626,7 +626,7 @@ footer .cols.footer-new{
 
   /* Action row */
   .mobile-header-actions{
-    display: none !important;
+    display: flex;
     align-items:center;
     gap:12px;
     width:100%;
@@ -674,6 +674,10 @@ body{ padding-top: var(--header-h); }
     margin-right:2px; /* micro-adjust to match visual balance */
     margin-left:2px;
   }
+}
+
+.mobile-header-actions{
+  display: none !important;
 }
 
 
