@@ -626,11 +626,11 @@ footer .cols.footer-new{
 
   /* Action row */
   .mobile-header-actions{
-    display:flex;
+    display: none !important;
     align-items:center;
     gap:12px;
     width:100%;
-    padding: 0;           /* IMPORTANT: container already has side padding */
+    padding: 0;
   }
 
   /* Book Now fills remaining space (not huge) */
