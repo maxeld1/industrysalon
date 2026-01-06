@@ -767,6 +767,8 @@ body{ padding-top: var(--header-h); }
 
 .team-name{
   margin-bottom:.25rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.5rem);
+  letter-spacing: 0.06rem;
 }
 
 .team-meta{
