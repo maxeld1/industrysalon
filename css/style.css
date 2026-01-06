@@ -457,6 +457,12 @@ header .nav{
 }
 .page-body{ text-align:center; font-size:1.5rem; margin:0 auto 1.2rem; }
 
+@media (max-width:768px){
+  .page-body{
+    font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+  }
+}
+
 .section-title{
   font-family:'Alta', Georgia, 'Times New Roman', serif;
   font-size:clamp(1.8rem, 3vw, 2.4rem);
