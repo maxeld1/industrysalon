@@ -433,7 +433,7 @@ header .nav{
 
 /* Titles */
 .page-title{
-  /*text-align:center;*/
+  text-align:center;
   margin:0 auto 1.2rem;
   font-size: clamp(2.7rem, 4.2vw, 4.4rem);
   white-space: nowrap;
