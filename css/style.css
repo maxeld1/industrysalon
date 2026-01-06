@@ -788,6 +788,7 @@ body{ padding-top: var(--header-h); }
   border:1px solid rgba(180,137,106,.55);
   border-radius:999px;
   background:rgba(255,255,255,.35);
+  opacity: 0.85;
 }
 
 .team-bio p{
