@@ -459,7 +459,7 @@ header .nav{
 
 @media (max-width:768px){
   .page-body{
-    font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+    font-size: clamp(1.3rem, 4.0vw, 2.0rem);
   }
 }
 
