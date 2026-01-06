@@ -822,7 +822,7 @@ body{ padding-top: var(--header-h); }
 
 .team-level .lvl{
   font-size: .7rem;
-  opacity: .85;
+  opacity: 1.0;
   line-height: 1;
 }
 
