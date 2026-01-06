@@ -800,6 +800,12 @@ body{ padding-top: var(--header-h); }
   margin-bottom: 0;
 }
 
-
-
+.team-name::after{
+  content:"";
+  display:block;
+  width:36px;
+  height:1px;
+  background:var(--line);
+  margin:10px auto 12px;
+}
 
