@@ -803,19 +803,11 @@ body{ padding-top: var(--header-h); }
 .team-dot{ opacity:.55; }
 
 .team-level{
-  width: 56px;              /* pick size you like */
-  height: 56px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 56px;           /* prevents shrinking in flex rows */
-
-  border: 1px solid rgba(89,78,69,.35);
-  color: var(--logo-brown);
-  font-family: 'Alta', Georgia, serif;
-  text-transform: uppercase;
-  letter-spacing: .06em;
+  padding:.18rem .55rem;
+  border:1px solid rgba(180,137,106,.55);
+  border-radius:999px;
+  background:rgba(255,255,255,.35);
+  opacity: 0.85;
 }
 
 .team-title{
