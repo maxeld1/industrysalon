@@ -760,6 +760,46 @@ body{ padding-top: var(--header-h); }
   }
 }
 
+/* ===================== TEAM LEVELS ===================== */
+.team-card{
+  text-align: center;
+}
+
+.team-name{
+  margin-bottom:.25rem;
+}
+
+.team-meta{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom: 1.1rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-size:.85rem;              /* tweak bigger/smaller */
+  color:var(--muted);      /* logo-brown, softened */
+}
+
+.team-dot{ opacity:.55; }
+
+.team-level{
+  padding:.18rem .55rem;
+  border:1px solid rgba(180,137,106,.55);
+  border-radius:999px;
+  background:rgba(255,255,255,.35);
+}
+
+.team-bio p{
+  margin: 0 0 0.9rem;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.team-bio p:last-child{
+  margin-bottom: 0;
+}
+
 
 
 
