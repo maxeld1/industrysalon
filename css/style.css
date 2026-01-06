@@ -803,11 +803,32 @@ body{ padding-top: var(--header-h); }
 .team-dot{ opacity:.55; }
 
 .team-level{
-  padding:.18rem .55rem;
-  border:1px solid rgba(180,137,106,.55);
-  border-radius:999px;
-  background:rgba(255,255,255,.35);
-  opacity: 0.85;
+  width: 68px;          /* ⬅ increase from 56px */
+  height: 68px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 68px;
+
+  border: 1px solid rgba(89,78,69,.35);
+  color: var(--logo-brown);
+  font-family: 'Alta', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.team-level .lvl{
+  font-size: .7rem;
+  opacity: .85;
+  line-height: 1;
+}
+
+.team-level .num{
+  font-size: 1.2rem;    /* ⬅ larger number */
+  line-height: 1;
 }
 
 .team-title{
