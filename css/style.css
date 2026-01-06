@@ -451,7 +451,7 @@ header .nav{
     overflow-wrap: anywhere;
     word-break: normal;
     padding: 0 12px;
-    font-size: clamp(2.8rem, 7vw, 3.0rem);
+    font-size: clamp(2.5rem, 7vw, 3.0rem);
     line-height: 1.1;
   }
 }
