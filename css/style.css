@@ -898,18 +898,19 @@ body{ padding-top: var(--header-h); }
 }
 
 .team-level-wrap{
-  display: flex;
-  justify-content: center;
+  display:flex;
+  flex-direction: column;   /* ✅ stack circle + divider */
+  align-items:center;       /* ✅ center horizontally */
+  justify-content:flex-start;
   margin: 10px 0 8px;
 }
 
 .team-level-wrap::after{
   content:"";
-  display:block;
   width:20px;
   height:1px;
   background: rgba(228,214,200,.9);
-  margin: 8px auto 0;
+  margin-top: 10px;
 }
 
 .team-level-circle{
