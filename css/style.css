@@ -612,12 +612,6 @@ footer .cols.footer-new{
   border-top: 1px solid rgba(228,214,200,.8);
 }
 
-.footer-bottom-bar{
-  width: 100%;
-  background: var(--header-bg);
-  border-top: 1px solid rgba(228,214,200,.8);
-}
-
 .footer-bottom-inner{
   display: flex;
   justify-content: space-between;
