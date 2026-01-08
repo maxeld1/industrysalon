@@ -599,7 +599,7 @@ footer .cols.footer-new{
 .footer-bottom{
   background: var(--header-bg); /* same as header */
   padding: 18px 0;
-  margin-top: 40px;
+  margin-top: 48px;
 
   display: flex;
   justify-content: space-between;
@@ -610,6 +610,12 @@ footer .cols.footer-new{
   text-transform: uppercase;
   color: rgba(89,78,69,.7);
   border-top: 1px solid rgba(228,214,200,.9);
+}
+
+.footer-bottom .container{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-bottom a{
