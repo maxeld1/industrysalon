@@ -612,6 +612,11 @@ footer .cols.footer-new{
   border-top: 1px solid rgba(228,214,200,.8);
 }
 
+.footer-copy,
+.footer-dev{
+  white-space: nowrap; /* remove this if you want wrapping */
+}
+
 .footer-bottom-inner{
   display: flex;
   justify-content: space-between;
