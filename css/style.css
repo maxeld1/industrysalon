@@ -859,23 +859,23 @@ body{ padding-top: var(--header-h); }
   margin-right: auto;
 }
 
-.team-level::after{
-  content:"";
-  display:block;
-  width:28px;
-  height:1px;
-  background: rgba(228,214,200,.9);
-  margin: 8px auto 0;
-}
-
-/*.team-title::after{*/
+/*.team-level::after{*/
 /*  content:"";*/
 /*  display:block;*/
-/*  width:36px;*/
+/*  width:28px;*/
 /*  height:1px;*/
-/*  background: rgba(228,214,200,.8);*/
-/*  margin: 10px auto 0;*/
+/*  background: rgba(228,214,200,.9);*/
+/*  margin: 8px auto 0;*/
 /*}*/
+
+.team-title::after{
+  content:"";
+  display:block;
+  width:36px;
+  height:1px;
+  background: rgba(228,214,200,.8);
+  margin: 10px auto 0;
+}
 
 .team-bio p{
   margin: 0 0 0.9rem;
