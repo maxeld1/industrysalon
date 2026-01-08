@@ -864,9 +864,12 @@ body{ padding-top: var(--header-h); }
   font-size: .9rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(89,78,69,.7);
   text-align: center;
   margin-bottom: 18px;
+
+  color: rgba(89,78,69,.85);
+  -webkit-font-smoothing: auto;
+  text-rendering: geometricPrecision;
 }
 
 /*.team-level::after{*/
@@ -886,6 +889,13 @@ body{ padding-top: var(--header-h); }
 /*  background: rgba(228,214,200,.8);*/
 /*  margin: 10px auto 0;*/
 /*}*/
+
+.team-top{
+  background: rgba(255,255,255,.92);
+  border-radius: 14px;
+  padding: 14px 12px 10px;
+  margin: -6px -6px 14px;   /* optional: makes it feel “built in” */
+}
 
 .team-bio p{
   margin: 0 0 0.9rem;
@@ -918,8 +928,8 @@ body{ padding-top: var(--header-h); }
   height: 64px;
   border-radius: 50%;
 
-  border: 1px solid rgba(89,78,69,.45);
-  background: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(89,78,69,.55);
 
   display: flex;
   flex-direction: column;
@@ -929,18 +939,20 @@ body{ padding-top: var(--header-h); }
 
 .level-label{
   font-family: 'Alta', Georgia, serif;
-  font-size: .55rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(89,78,69,.65);
   line-height: 1;
+
+  color: rgba(89,78,69,.85);
+  font-size: .60rem;
 }
 
 .level-number{
   font-family: 'Alta', Georgia, serif;
-  font-size: 1.05rem;
-  color: var(--logo-brown);
   line-height: 1.1;
+
+  color: rgba(89,78,69,1);
+  font-size: 1.15rem;
 }
 
 /*.team-name::after{*/
