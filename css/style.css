@@ -944,7 +944,7 @@ body{ padding-top: var(--header-h); }
   line-height: 1;
 
   color: rgba(89,78,69,.85);
-  font-size: .60rem;
+  font-size: .70rem;
 }
 
 .level-number{
@@ -952,7 +952,7 @@ body{ padding-top: var(--header-h); }
   line-height: 1.1;
 
   color: rgba(89,78,69,1);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 /*.team-name::after{*/
