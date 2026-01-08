@@ -845,18 +845,28 @@ body{ padding-top: var(--header-h); }
   color: rgba(89,78,69,.95);
 }
 
+/*.team-title{*/
+/*  font-family: 'Alta', Georgia, serif;*/
+/*  text-transform: uppercase;*/
+/*  letter-spacing: .09em;*/
+/*  font-size: .9rem;*/
+/*  color: rgba(89,78,69,.7);*/
+
+/*  text-align: center;*/
+/*  margin-bottom: 16px;*/
+/*  max-width: 260px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*}*/
+
 .team-title{
   font-family: 'Alta', Georgia, serif;
-  text-transform: uppercase;
-  letter-spacing: .09em;
   font-size: .9rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: rgba(89,78,69,.7);
-
   text-align: center;
-  margin-bottom: 16px;
-  max-width: 260px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 18px;
 }
 
 /*.team-level::after{*/
@@ -868,14 +878,14 @@ body{ padding-top: var(--header-h); }
 /*  margin: 8px auto 0;*/
 /*}*/
 
-.team-title::after{
-  content:"";
-  display:block;
-  width:36px;
-  height:1px;
-  background: rgba(228,214,200,.8);
-  margin: 10px auto 0;
-}
+/*.team-title::after{*/
+/*  content:"";*/
+/*  display:block;*/
+/*  width:36px;*/
+/*  height:1px;*/
+/*  background: rgba(228,214,200,.8);*/
+/*  margin: 10px auto 0;*/
+/*}*/
 
 .team-bio p{
   margin: 0 0 0.9rem;
@@ -885,6 +895,53 @@ body{ padding-top: var(--header-h); }
 
 .team-bio p:last-child{
   margin-bottom: 0;
+}
+
+.team-level-wrap{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 8px;
+}
+
+.team-level-wrap::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:1px;
+  background: rgba(228,214,200,.9);
+  margin: 8px auto 0;
+}
+
+.team-level-circle{
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(89,78,69,.45);
+  background: rgba(255,255,255,.35);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.level-label{
+  font-family: 'Alta', Georgia, serif;
+  font-size: .55rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(89,78,69,.65);
+  line-height: 1;
+}
+
+.level-number{
+  font-family: 'Alta', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--logo-brown);
+  line-height: 1.1;
 }
 
 /*.team-name::after{*/
