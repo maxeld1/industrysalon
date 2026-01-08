@@ -625,6 +625,7 @@ footer .cols.footer-new{
   font-size: .8rem;
   letter-spacing: .06em;
   color: rgba(89,78,69,.8);
+  gap:24px;
 }
 
 .footer-bottom-inner a{
