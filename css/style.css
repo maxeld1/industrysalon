@@ -604,6 +604,7 @@ footer .cols.footer-new{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap:24px;
 
   font-size: 0.75rem;
   letter-spacing: .08em;
