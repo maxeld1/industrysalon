@@ -597,19 +597,24 @@ footer .cols.footer-new{
 .hours-row span:first-child{ font-weight:600; color:var(--logo-brown); }
 
 .footer-bottom{
-  background: var(--header-bg); /* same as header */
+  background: var(--header-bg);
+  border-top: 1px solid rgba(228,214,200,.8);
   padding: 18px 0;
   margin-top: 48px;
+}
 
+.footer-bottom-inner{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  color: rgba(89,78,69,.8);
+}
 
-  font-size: 0.75rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: rgba(89,78,69,.7);
-  border-top: 1px solid rgba(228,214,200,.9);
+.footer-bottom-inner a{
+  color: rgba(89,78,69,.8);
+  text-decoration: none;
 }
 
 .footer-bottom .container{
