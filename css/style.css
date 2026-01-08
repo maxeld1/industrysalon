@@ -793,7 +793,7 @@ body{ padding-top: var(--header-h); }
 
 .team-name{
   font-family: 'Alta', Georgia, serif;
-  font-size: clamp(1.45rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.45rem, 2.2vw, 1.65rem);
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--logo-brown);
