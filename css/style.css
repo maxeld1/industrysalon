@@ -952,7 +952,7 @@ body{ padding-top: var(--header-h); }
   line-height: 1.1;
 
   color: rgba(89,78,69,1);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 /*.team-name::after{*/
