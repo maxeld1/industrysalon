@@ -793,11 +793,12 @@ body{ padding-top: var(--header-h); }
 
 .team-name{
   font-family: 'Alta', Georgia, serif;
-  font-size: 1.35rem;     /* bigger */
+  font-size: clamp(1.35rem, 2.2vw, 1.55rem);
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--logo-brown);
-  margin: 0;
+  text-align: center;
+  margin: 0 0 6px;
 }
 
 .team-meta{
@@ -858,14 +859,23 @@ body{ padding-top: var(--header-h); }
   margin-right: auto;
 }
 
-.team-title::after{
+.team-level::after{
   content:"";
   display:block;
-  width:36px;
+  width:28px;
   height:1px;
-  background: rgba(228,214,200,.8);
-  margin: 10px auto 0;
+  background: rgba(228,214,200,.9);
+  margin: 8px auto 0;
 }
+
+/*.team-title::after{*/
+/*  content:"";*/
+/*  display:block;*/
+/*  width:36px;*/
+/*  height:1px;*/
+/*  background: rgba(228,214,200,.8);*/
+/*  margin: 10px auto 0;*/
+/*}*/
 
 .team-bio p{
   margin: 0 0 0.9rem;
@@ -877,12 +887,12 @@ body{ padding-top: var(--header-h); }
   margin-bottom: 0;
 }
 
-.team-name::after{
-  content:"";
-  display:block;
-  width:36px;
-  height:1px;
-  background:var(--line);
-  margin:10px auto 12px;
-}
+/*.team-name::after{*/
+/*  content:"";*/
+/*  display:block;*/
+/*  width:36px;*/
+/*  height:1px;*/
+/*  background:var(--line);*/
+/*  margin:10px auto 12px;*/
+/*}*/
 
