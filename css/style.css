@@ -67,11 +67,18 @@ header::before{
 *{ box-sizing:border-box; }
 html{background: var(--header-bg);}
 body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin:0;
   padding:0;
   overflow-x:hidden;
   background: var(--bg);
   /*background: url("../assets/images/industry_bg.jpg");*/
+}
+
+main {
+  flex: 1;
 }
 
 /*body::before{*/
@@ -599,7 +606,7 @@ footer .cols.footer-new{
 .footer-bottom{
   background: var(--header-bg); /* same as header */
   padding: 18px 0;
-  margin-top: 48px;
+  margin-top: auto;
 
   display: flex;
   justify-content: space-between;
@@ -618,14 +625,29 @@ footer .cols.footer-new{
   white-space: nowrap; /* remove this if you want wrapping */
 }
 
-.footer-bottom-inner{
+/*.footer-bottom-inner{*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  font-size: .8rem;*/
+/*  letter-spacing: .06em;*/
+/*  color: rgba(89,78,69,.8);*/
+/*  gap:40px;*/
+/*}*/
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: .8rem;
-  letter-spacing: .06em;
-  color: rgba(89,78,69,.8);
-  gap:40px;
+
+  font-size: 0.75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(89,78,69,.7);
 }
 
 .footer-bottom-inner a{
