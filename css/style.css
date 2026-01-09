@@ -618,6 +618,7 @@ footer .cols.footer-new{
   text-transform: uppercase;
   color: rgba(89,78,69,.7);
   border-top: 1px solid rgba(228,214,200,.8);
+  width: 100%;
 }
 
 .footer-copy,
@@ -640,6 +641,8 @@ footer .cols.footer-new{
   margin: 0 auto;
   padding: 18px 24px;
 
+  gap: 24px;
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -648,6 +651,13 @@ footer .cols.footer-new{
   letter-spacing: .12em;
   text-transform: uppercase;
   color: rgba(89,78,69,.7);
+}
+
+@media (max-width: 700px){
+  .footer-bottom-inner{
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .footer-bottom-inner a{
