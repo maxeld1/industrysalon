@@ -547,8 +547,7 @@ header .nav{
 footer{
   background:#EAE0D6;
   border-top:1px solid var(--line);
-  margin-top: 20px;
-  /*padding:56px 0 28px;*/
+  padding:56px 0 0;
 }
 footer h4{
   font-family:'Alta', Georgia, 'Times New Roman', serif;
