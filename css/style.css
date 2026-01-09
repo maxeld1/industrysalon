@@ -660,6 +660,17 @@ footer .cols.footer-new{
     justify-content: center;
     text-align: center;
   }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-bottom a {
+    display: block;
+  }
 }
 
 .footer-bottom-inner a{
