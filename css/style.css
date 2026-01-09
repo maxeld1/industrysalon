@@ -65,6 +65,8 @@ header::before{
 }
 
 *{ box-sizing:border-box; }
+
+html, body{ height:100%; }
 html{background: var(--header-bg);}
 body{
   min-height: 100vh;
@@ -606,7 +608,7 @@ footer .cols.footer-new{
 .footer-bottom{
   background: var(--header-bg); /* same as header */
   padding: 18px 0;
-  margin-top: auto;
+  margin-top: 40px;
 
   display: flex;
   justify-content: space-between;
