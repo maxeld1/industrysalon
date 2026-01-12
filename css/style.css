@@ -484,6 +484,29 @@ header .nav{
   transform: translateX(-50%);
 }
 
+@media (max-width:768px){
+  .main-title{
+    /* stop the desktop centering hack */
+    left: auto;
+    transform: none;
+
+    /* make it behave like normal centered text */
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+
+    /* wrapping */
+    white-space: normal;
+    overflow-wrap: anywhere;   /* or break-word */
+    word-break: normal;
+    hyphens: auto;
+
+    padding: 0 16px;
+    text-align: center;
+  }
+}
+
 .page-title{
   text-align:center;
   margin:0 0 1.2rem;
@@ -508,24 +531,12 @@ header .nav{
 
 @media (max-width:768px){
   .page-title{
-    /* stop the desktop centering hack */
-    left: auto;
-    transform: none;
-
-    /* make it behave like normal centered text */
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-
-    /* wrapping */
     white-space: normal;
-    overflow-wrap: anywhere;   /* or break-word */
+    overflow-wrap: anywhere;
     word-break: normal;
-    hyphens: auto;
-
-    padding: 0 16px;
-    text-align: center;
+    padding: 0 12px;
+    font-size: clamp(2.2rem, 7vw, 3.0rem);
+    line-height: 1.1;
   }
 }
 .page-body{ text-align:center; font-size:1.5rem; margin:0 auto 1.2rem; }
