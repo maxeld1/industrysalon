@@ -492,6 +492,15 @@ header .nav{
   transform: translateX(-50%);
 }
 
+.page-title::after{
+  content:'';
+  display:block;
+  width:64px;
+  height:1px;
+  background:var(--line);
+  margin:16px auto 0;
+}
+
 @media (max-width:768px){
   .page-title{
     white-space: normal;
