@@ -1215,6 +1215,12 @@ body{ padding-top: var(--header-h); }
   color: var(--logo-brown);
 }
 
+.reviews-cta{
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
 .reviews-btn:active{ transform: translateY(1px); }
 
 @media (min-width: 900px){
