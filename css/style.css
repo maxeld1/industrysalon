@@ -67,7 +67,10 @@ header::before{
 *{ box-sizing:border-box; }
 
 html, body{ height:100%; }
-html{background: var(--header-bg);}
+html{
+  /*background: var(--header-bg);*/
+  background:var(--bg);
+}
 body{
   min-height: 100vh;
   display: flex;
