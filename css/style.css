@@ -747,6 +747,14 @@ footer .cols.footer-new{
 }
 
 /* -------------------- Contact Page -------------------- */
+/* Only on contact page */
+.contact-page .page-title{
+  left:auto;
+  transform:none;
+  display:block;
+  text-align:center;
+}
+
 .contact-info{
   display:flex;
   flex-direction:column;
