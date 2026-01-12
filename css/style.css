@@ -508,12 +508,24 @@ header .nav{
 
 @media (max-width:768px){
   .page-title{
+    /* stop the desktop centering hack */
+    left: auto;
+    transform: none;
+
+    /* make it behave like normal centered text */
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+
+    /* wrapping */
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere;   /* or break-word */
     word-break: normal;
-    padding: 0 12px;
-    font-size: clamp(2.2rem, 7vw, 3.0rem);
-    line-height: 1.1;
+    hyphens: auto;
+
+    padding: 0 16px;
+    text-align: center;
   }
 }
 .page-body{ text-align:center; font-size:1.5rem; margin:0 auto 1.2rem; }
