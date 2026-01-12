@@ -135,7 +135,7 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 1rem; }
 ul,li{ font-family:inherit; color:var(--muted); line-height:1.7; }
 
 h1,h2,h3,h4,h5,h6{
-  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-family:'Libre Franklin', Georgia, 'Times New Roman', serif;
   font-weight:400;
   letter-spacing:-0.01em;
   color:var(--logo-brown);
@@ -290,7 +290,7 @@ header .nav{
 .nav-utility,
 .cta-book,
 .menu-toggle{
-  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-family:'Libre Franklin', Georgia, 'Times New Roman', serif;
   font-weight:var(--nav-weight);
   letter-spacing:var(--nav-letter);
   text-transform:uppercase;
@@ -333,7 +333,7 @@ header .nav{
   -webkit-backdrop-filter: blur(6px);
   box-shadow:var(--glass-shadow);
 
-  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-family:'Libre Franklin', Georgia, 'Times New Roman', serif;
   font-weight:500;
   letter-spacing:0.05em;
   text-transform:uppercase;
@@ -536,7 +536,7 @@ header .nav{
 }
 
 .section-title{
-  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-family:'Libre Franklin', Georgia, 'Times New Roman', serif;
   font-size:clamp(1.8rem, 3vw, 2.4rem);
   font-weight:400;
   letter-spacing:0.05em;
@@ -587,7 +587,7 @@ footer{
   padding:40px 0 0;
 }
 footer h4{
-  font-family:'Alta', Georgia, 'Times New Roman', serif;
+  font-family:'Libre Franklin', Georgia, 'Times New Roman', serif;
   font-weight:400;
   font-size:1.25rem;
   letter-spacing:0.06em;
@@ -957,7 +957,7 @@ body{ padding-top: var(--header-h); }
 
 
 .team-name{
-  font-family: 'Alta', Georgia, serif;
+  font-family: 'Libre Franklin', Georgia, serif;
   font-size: clamp(1.45rem, 2.2vw, 1.65rem);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1025,7 +1025,7 @@ body{ padding-top: var(--header-h); }
 /*}*/
 
 .team-title{
-  font-family: 'Alta', Georgia, serif;
+  font-family: 'Libre Franklin', Georgia, serif;
   font-size: .9rem;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -1103,7 +1103,7 @@ body{ padding-top: var(--header-h); }
 }
 
 .level-label{
-  font-family: 'Alta', Georgia, serif;
+  font-family: 'Libre Franklin', Georgia, serif;
   letter-spacing: .12em;
   text-transform: uppercase;
   line-height: 1;
@@ -1113,7 +1113,7 @@ body{ padding-top: var(--header-h); }
 }
 
 .level-number{
-  font-family: 'Alta', Georgia, serif;
+  font-family: 'Libre Franklin', Georgia, serif;
   line-height: 1.1;
 
   color: rgba(89,78,69,1);
@@ -1179,7 +1179,7 @@ body{ padding-top: var(--header-h); }
   justify-content: space-between;
   gap: 12px;
 
-  font-family: 'Alta', Georgia, serif;
+  font-family: 'Libre Franklin', Georgia, serif;
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: .78rem;
