@@ -470,6 +470,27 @@ header .nav{
           radial-gradient(900px 500px at 100% -10%, rgba(154,167,163,.12), transparent 60%);
 }
 
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+  justify-content:center;
+}
+
+@media (max-width:768px){
+  .hero-actions{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .btn{
+    width: 100%;
+    max-width: 320px; /* optional */
+    margin: 0 auto;
+  }
+}
+
 /* Titles */
 .main-title{
   text-align:center;
