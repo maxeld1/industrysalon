@@ -78,4 +78,20 @@
     const mo = new MutationObserver(() => { if (tryBind()) mo.disconnect(); });
     mo.observe(document.documentElement, { childList:true, subtree:true });
   }
+
+  (function () {
+    const track = document.querySelector(".reviews-track");
+    if (!track) return;
+
+    const btns = document.querySelectorAll(".reviews-btn");
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const dir = Number(btn.dataset.dir || 1);
+        const card = track.querySelector(".review-card");
+        const step = card ? card.getBoundingClientRect().width + 18 : 320;
+
+        track.scrollBy({ left: dir * step, behavior: "smooth" });
+      });
+    });
+  })();
 })();

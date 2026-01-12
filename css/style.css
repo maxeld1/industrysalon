@@ -1129,3 +1129,98 @@ body{ padding-top: var(--header-h); }
 /*  margin:10px auto 12px;*/
 /*}*/
 
+/* -------------------- Reviews -------------------- */
+.reviews .section-title{ margin-bottom: 1.8rem; }
+
+.reviews-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 18px;
+
+  overflow-x: auto;
+  padding: 8px 6px 18px;
+
+  scroll-snap-type: x mandatory;
+  scroll-padding: 6px;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.reviews-track::-webkit-scrollbar{ height: 10px; }
+.reviews-track::-webkit-scrollbar-thumb{
+  background: rgba(89,78,69,.20);
+  border-radius: 999px;
+}
+.reviews-track::-webkit-scrollbar-track{
+  background: rgba(89,78,69,.06);
+  border-radius: 999px;
+}
+
+.review-card{
+  scroll-snap-align: start;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  padding: 22px;
+}
+
+.review-text{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.review-meta{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+
+  font-family: 'Alta', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .78rem;
+  color: rgba(89,78,69,.75);
+}
+
+.review-stars{
+  letter-spacing: .14em;
+  color: rgba(89,78,69,.65);
+}
+
+/* Buttons */
+.reviews-actions{
+  display:flex;
+  justify-content:center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.reviews-btn{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 22px rgba(89,78,69,.10), 0 3px 8px rgba(89,78,69,.06);
+  cursor: pointer;
+
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--logo-brown);
+}
+
+.reviews-btn:active{ transform: translateY(1px); }
+
+@media (min-width: 900px){
+  .reviews-track{
+    grid-auto-columns: minmax(320px, 360px);
+    justify-content: center;
+  }
+}
+
