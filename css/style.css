@@ -324,7 +324,7 @@ header .nav-right{
 /* Header hover spacing (desktop) */
 .site-nav a{
   white-space:nowrap;
-},
+}
 .nav-utility{
   padding: 12px 18px;
   transition:
