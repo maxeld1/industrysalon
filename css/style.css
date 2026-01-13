@@ -185,12 +185,24 @@ header .container{
 header .nav{
   min-height:var(--header-h);
   display:grid;
-  grid-template-columns:1fr auto 1fr;
+  grid-template-columns:1fr 260px 1fr;
   align-items:center;
   column-gap:28px;
   gap:12px;
   padding:0 0;
-  position:relative; /* enables absolute-centering logo on mobile */
+  position:relative;
+}
+
+header .nav-left{
+  justify-self: end;
+}
+
+header .brand{
+  justify-self: center;
+}
+
+header .nav-right{
+  justify-self: start;
 }
 
 
