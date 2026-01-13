@@ -367,6 +367,17 @@ header .nav-right{
   opacity: 1;
   letter-spacing: 0.14em;
 }
+
+/* hide the real text when overlay is showing */
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.is-active,
+.nav-utility:hover,
+.nav-utility:focus-visible{
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari */
+}
+
 /* -------------------- Buttons -------------------- */
 .btn{
   display:inline-flex;
