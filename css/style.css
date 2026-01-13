@@ -186,6 +186,14 @@ header .nav{
   position:relative; /* enables absolute-centering logo on mobile */
 }
 
+header .nav-left{
+  padding-right: 48px;
+}
+
+header .nav-right{
+  padding-left: 48px;
+}
+
 /* MOBILE: 2-row header, logo on top, actions under it */
 /*@media (max-width:768px){*/
 /*  header .nav{*/
@@ -267,7 +275,7 @@ header .nav{
   margin:0;
   padding:0;
   display:flex;
-  gap:28px;
+  gap:44px;
   align-items:center;
 }
 
