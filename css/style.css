@@ -190,6 +190,15 @@ header .nav-left{
   padding-right: 48px;
 }
 
+.nav-left{
+  padding-right: 72px;
+}
+
+.nav-right{
+  padding-right: 72px;
+}
+
+
 /*header .nav-right{*/
 /*  padding-left: 48px;*/
 /*}*/
