@@ -179,9 +179,9 @@ header{
 header .nav{
   min-height:var(--header-h);
   display:grid;
-  grid-template-columns:2fr auto 1fr;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  gap:12px;
+  gap:20px;
   padding:0 0;
   position:relative; /* enables absolute-centering logo on mobile */
 }
