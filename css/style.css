@@ -185,16 +185,17 @@ header .container{
 header .nav{
   min-height:var(--header-h);
   display:grid;
-  grid-template-columns:1fr 260px 1fr;
+  grid-template-columns: 1fr minmax(320px, 420px) 1fr;
   align-items:center;
-  column-gap:28px;
+  column-gap: clamp(26px, 4vw, 64px);
   gap:12px;
-  padding:0 0;
+  padding:0;
   position:relative;
 }
 
 header .nav-left{
   justify-self: end;
+  padding-right: clamp(10px, 1.6vw, 22px);
 }
 
 header .brand{
@@ -203,6 +204,7 @@ header .brand{
 
 header .nav-right{
   justify-self: start;
+  padding-left: clamp(10px, 1.6vw, 22px);
 }
 
 
@@ -291,7 +293,7 @@ header .nav-right{
   margin:0;
   padding:0;
   display:flex;
-  gap:56px;
+  gap: clamp(28px, 3.2vw, 56px);
   align-items:center;
 }
 
