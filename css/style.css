@@ -900,7 +900,7 @@ footer .cols.footer-new{
     display: grid !important;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    row-gap: 20px;
+    row-gap: 10px;
     padding: 12px 0 14px;
     min-height: auto;
   }
