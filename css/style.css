@@ -190,9 +190,9 @@ header .nav-left{
   padding-right: 48px;
 }
 
-header .nav-right{
-  padding-left: 48px;
-}
+/*header .nav-right{*/
+/*  padding-left: 48px;*/
+/*}*/
 
 /* MOBILE: 2-row header, logo on top, actions under it */
 /*@media (max-width:768px){*/
