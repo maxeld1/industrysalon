@@ -1278,3 +1278,42 @@ body{ padding-top: var(--header-h); }
   }
 }
 
+.pricing-note-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.pricing-note-wrap::before{
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: rgba(228,214,200,.9);  /* soft divider */
+  margin-bottom: 16px;
+}
+
+.pricing-note{
+  text-align: center;
+  max-width: 560px;
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+
+  color: rgba(89,78,69,.75);
+  font-family: 'Tinos', Georgia, serif;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px){
+  .pricing-note{
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 0 18px;
+  }
+
+  .pricing-note-wrap::before{
+    width: 48px; /* slightly shorter on mobile */
+  }
+}
