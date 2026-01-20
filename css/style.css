@@ -628,6 +628,16 @@ header .nav-right{
 }
 .card li:last-child{ border-bottom:none; }
 
+.card-note{
+  margin-top: 12px;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: rgba(89,78,69,.65);
+  text-align: center;
+  font-style: italic;
+}
+
+
 /* -------------------- Footer -------------------- */
 footer{
   background:#EAE0D6;
