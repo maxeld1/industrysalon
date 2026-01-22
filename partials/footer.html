@@ -60,34 +60,34 @@
 
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <span>© Copyright 2026 Industry Salon</span>
+      <span>© <span id="year"></span> Industry Salon</span>
       <span>Web Design and Development by Max Eldabbas</span>
     </div>
   </div>
 
-  <script>
-    (function () {
-      // Current path, e.g. /industrysalon/pages/index.html
-      var path = location.pathname;
+<!--  <script>-->
+<!--    (function () {-->
+<!--      // Current path, e.g. /industrysalon/pages/index.html-->
+<!--      var path = location.pathname;-->
 
-      // Compute root that works on both / and /repo-name/
-      // If we're inside /pages/, strip that and keep the repo prefix.
-      var root = path.includes('/pages/')
-              ? path.split('/pages/')[0] + '/'
-              : path.substring(0, path.lastIndexOf('/') + 1);
+<!--      // Compute root that works on both / and /repo-name/-->
+<!--      // If we're inside /pages/, strip that and keep the repo prefix.-->
+<!--      var root = path.includes('/pages/')-->
+<!--              ? path.split('/pages/')[0] + '/'-->
+<!--              : path.substring(0, path.lastIndexOf('/') + 1);-->
 
-      if (!root.endsWith('/')) root += '/';
+<!--      if (!root.endsWith('/')) root += '/';-->
 
-      var s = document.createElement('script');
-      s.src = root + 'js/main.js';
-      s.defer = true;
-      document.body.appendChild(s);
+<!--      var s = document.createElement('script');-->
+<!--      s.src = root + 'js/main.js';-->
+<!--      s.defer = true;-->
+<!--      document.body.appendChild(s);-->
 
-      // Set footer year safely
-      document.addEventListener('DOMContentLoaded', function () {
-        var y = document.getElementById('year');
-        if (y) y.textContent = new Date().getFullYear();
-      });
-    })();
-  </script>
+<!--      // Set footer year safely-->
+<!--      document.addEventListener('DOMContentLoaded', function () {-->
+<!--        var y = document.getElementById('year');-->
+<!--        if (y) y.textContent = new Date().getFullYear();-->
+<!--      });-->
+<!--    })();-->
+<!--  </script>-->
 </footer>
