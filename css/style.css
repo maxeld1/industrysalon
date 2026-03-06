@@ -2055,27 +2055,26 @@ body{ padding-top: var(--header-h); }
   margin-top: 12px;
   display:flex;
   justify-content:center;
-  gap: 10px;
+  gap: 18px;
 }
 
 .reviews-btn{
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid rgba(228,214,200,.96);
-  background: rgba(255,255,255,.86);
-  box-shadow: 0 8px 16px rgba(89,78,69,.09), 0 2px 6px rgba(89,78,69,.05);
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
   color: var(--logo-brown);
-  font-size: 1.2rem;
+  font-size: 1.65rem;
   line-height: 1;
   cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  padding: 6px 8px;
+  transition: transform .2s ease, color .2s ease;
 }
 
 .reviews-btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,.98);
-  box-shadow: 0 11px 20px rgba(89,78,69,.13), 0 3px 8px rgba(89,78,69,.06);
+  color: rgba(89,78,69,.78);
 }
 
 .home-main .btn{
