@@ -59,6 +59,21 @@
     });
   }
 
+  function initVideoPlaybackRates(){
+    document.querySelectorAll('video[data-playback-rate]').forEach(video => {
+      const rate = Number(video.dataset.playbackRate);
+      if (!Number.isFinite(rate) || rate <= 0) return;
+
+      const applyRate = () => {
+        video.playbackRate = rate;
+        video.defaultPlaybackRate = rate;
+      };
+
+      applyRate();
+      video.addEventListener('loadedmetadata', applyRate, { once: true });
+    });
+  }
+
   function initServiceAccordion(){
     const details = Array.from(document.querySelectorAll('.services-highlights .service-dropdown'));
     if (!details.length) return;
@@ -160,6 +175,9 @@
 
   if (document.readyState !== 'loading') initReducedMotionMedia();
   else document.addEventListener('DOMContentLoaded', initReducedMotionMedia);
+
+  if (document.readyState !== 'loading') initVideoPlaybackRates();
+  else document.addEventListener('DOMContentLoaded', initVideoPlaybackRates);
 
   if (document.readyState !== 'loading') initServiceAccordion();
   else document.addEventListener('DOMContentLoaded', initServiceAccordion);
