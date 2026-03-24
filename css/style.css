@@ -2569,12 +2569,11 @@ body{ padding-top: var(--header-h); }
   font-family:'Scheherazade New', Georgia, 'Times New Roman', serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: clamp(2.35rem, 3.6vw, 4rem);
+  font-size: clamp(2.2rem, 3vw, 3.35rem);
   line-height: 1.05;
-  white-space: normal;
+  white-space: nowrap;
   max-width: 100%;
   margin-inline: auto;
-  text-wrap: balance;
 }
 
 .services-hero-inner p{
