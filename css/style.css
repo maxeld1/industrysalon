@@ -774,6 +774,11 @@ header .nav-right{
   background: #15100d;
 }
 
+.home-main .hero.hero-video > .container{
+  width: 100%;
+  max-width: none;
+}
+
 .hero-bg-video{
   position: absolute;
   inset: 0;
@@ -795,6 +800,7 @@ header .nav-right{
 .hero-copy{
   position: relative;
   z-index: 2;
+  width: 100%;
   text-align: center;
 }
 
