@@ -1,0 +1,130 @@
+{
+  "intro": "A collective of artists dedicated to personalized beauty, elevated care, and exceptional guest experiences.",
+  "members": [
+    {
+      "name": "Mary Beth",
+      "level": 8,
+      "title": "Owner / Stylist / Educator",
+      "image": "/assets/images/headshots/marybeth_headshot.png",
+      "imageAlt": "Headshot of Mary Beth",
+      "instagramHandle": "@marybethsmallstylist",
+      "instagramUrl": "https://instagram.com/marybethsmallstylist",
+      "bio": [
+        "Industry's owner Mary Beth is a passionate hairstylist, wife, and mom of three, living and raising her family in the same community of her salon. With over 20 years of experience, hair has always been more than a career-it's a way to build trust, create meaningful connections, and help clients feel confident as the best version of themselves.",
+        "She specializes in customized color, effortless lived-in styles, and wedding and formal styling, with a strong focus on detail and intentional work. After years behind the chair, Mary Beth created a salon space that reflects what she values most: a relaxed, welcoming environment rooted in quality, continued education, and genuine care.",
+        "Every appointment is about more than great hair-it's about confidence, comfort, and making each client feel truly seen."
+      ]
+    },
+    {
+      "name": "Lisa",
+      "level": 7,
+      "title": "Co-Founder / Stylist / Educator",
+      "image": "/assets/images/headshots/lisa_headshot.png",
+      "imageAlt": "Headshot of Lisa",
+      "instagramHandle": "@lisadellapennariggs",
+      "instagramUrl": "https://instagram.com/lisadellapennariggs",
+      "bio": [
+        "As a co-founder, Level 7 Stylist, and Redken Artist, Lisa brings extensive expertise and passion to every guest experience. With advanced training in cutting, coloring, styling, and wedding hair, Lisa specializes in creating customized looks that enhance each guest's individuality and lifestyle.",
+        "Certified in Redken Hair Color and Design (cutting), and recognized as a Redken Specialist, Lisa has worked on Redken photoshoots and commercials and travels nationally to educate and inspire other salons through Redken education. Each year, she also attends ongoing trainings in NYC, LA, and Las Vegas to stay inspired and ahead of trends.",
+        "At the heart of her work, she believes in delivering an exceptional guest experience-one that is personalized, elevated, and fun. Every service is thoughtfully tailored to meet each guest's needs while creating an atmosphere that is both professional and enjoyable."
+      ]
+    },
+    {
+      "name": "Sam",
+      "level": 4,
+      "title": "Stylist",
+      "image": "/assets/images/headshots/sam_headshot.png",
+      "imageAlt": "Headshot of Sam",
+      "instagramHandle": "@sampanczner_hair",
+      "instagramUrl": "https://instagram.com/sampanczner_hair",
+      "bio": [
+        "With nearly 11 years in the beauty industry, Sam began her journey as a shampoo assistant and has spent the past nine years refining her craft behind the chair. She is deeply passionate about building meaningful connections with her clients and helping them feel like the best versions of themselves-inside and out.",
+        "While she offers a wide range of services, her true creative passion lies in the art of hair color. She finds great fulfillment in transforming not only hair, but also the confidence of each client she works with.",
+        "A strong believer in continued education, Sam is always striving to grow, learn, and stay at the forefront of industry trends and techniques. She is thrilled to begin this new chapter at Industry Salon, working alongside a team of talented women she trusts and admires. Together, they are committed to creating a welcoming, elevated environment where every client feels valued, confident, and beautiful."
+      ]
+    },
+    {
+      "name": "Bri",
+      "level": 5,
+      "title": "Stylist / Extension Specialist",
+      "image": "/assets/images/headshots/bri_headshot.png",
+      "imageAlt": "Headshot of Bri",
+      "instagramHandle": "@bri__doyle",
+      "instagramUrl": "https://instagram.com/bri__doyle",
+      "bio": [
+        "Bri has over 10 years of experience in the hair industry and specializes in all aspects of hair, including color, cutting, and formal styling. Her true passion lies in blonding services and creating dimensional, lived-in, and natural-looking color. Bri is certified in hand-tied extensions and loves helping clients achieve their dream hair by adding length, fullness, and confidence-especially for those with finer hair. She is dedicated to making every client look and feel their absolute best."
+      ]
+    },
+    {
+      "name": "Brianna",
+      "level": 4,
+      "title": "Stylist / Wax Specialist",
+      "image": "/assets/images/headshots/brianna_headshot.png",
+      "imageAlt": "Headshot of Brianna",
+      "instagramHandle": "@briannacelotto_beauty",
+      "instagramUrl": "https://instagram.com/briannacelotto_beauty",
+      "bio": [
+        "With over 9 years in the hair industry, Brianna has built a career rooted in passion, creativity, and dedication. She knew she wanted to do hair from the time she was little, and turning that dream into reality has been incredibly rewarding. Loving what she does every day, she takes pride in helping her clients feel confident and beautiful through her work."
+      ]
+    },
+    {
+      "name": "Maria",
+      "level": 3,
+      "title": "Stylist",
+      "image": "/assets/images/headshots/maria_headshot.png",
+      "imageAlt": "Headshot of Maria",
+      "instagramHandle": "@manesbymaria__",
+      "instagramUrl": "https://instagram.com/manesbymaria__",
+      "bio": [
+        "Maria has been in the beauty industry for nearly eight years, and her passion for hair continues to grow. She knew from a young age that this was the career she wanted, and she feels grateful to turn that childhood dream into her everyday work. Helping clients feel confident and amazing when they leave her chair is what she loves most."
+      ]
+    },
+    {
+      "name": "Leia",
+      "level": 5,
+      "title": "Stylist",
+      "image": "/assets/images/headshots/leia_headshot.png",
+      "imageAlt": "Headshot of Leia",
+      "instagramHandle": "@looksby_leia",
+      "instagramUrl": "https://instagram.com/looksby_leia",
+      "bio": [
+        "Leia was born and raised right here in our community, Leia now lives locally with her husband and three amazing children. She began her hair journey at Arrojo Academy in SoHo, New York, graduating in 2013 after training under some of the industry's most renowned stylists.",
+        "With a strong foundation in cutting, coloring, and styling, Leia is known for her keen eye for detail and dedication to quality. She's passionate about helping every client feel confident, beautiful, and truly their best. From behind the chair to on-site bridal, Leia's experience and heart for her craft make her such a special part of The Industry team."
+      ]
+    },
+    {
+      "name": "Ali",
+      "level": 2,
+      "title": "Stylist / Content Coordinator",
+      "image": "/assets/images/headshots/ali_headshot.png",
+      "imageAlt": "Headshot of Ali",
+      "instagramHandle": "@alidonahuehair",
+      "instagramUrl": "https://instagram.com/alidonahuehair",
+      "bio": [
+        "Ali is focused on growing her career, while loving what she does, making people feel beautiful. Always open to learning new things and being a team player, Ali works hard to create a comfortable, welcoming vibe where clients can relax, trust the process, and leave the chair feeling confident, refreshed, and happy."
+      ]
+    },
+    {
+      "name": "Dana",
+      "title": "Front Desk Specialist / Scheduling & Client Care",
+      "image": "/assets/images/headshots/dana_headshot.png",
+      "imageAlt": "Headshot of Dana",
+      "instagramHandle": "@dana_murph94",
+      "instagramUrl": "https://instagram.com/dana_murph94",
+      "bio": [
+        "With 18 years of experience as a receptionist, Dana thrives in customer service and enjoys creating a welcoming experience for every client. She loves connecting with people, building genuine relationships, and is proud to be part of a supportive team. Outside of the salon, she enjoys spending time with her three children and her husband!"
+      ]
+    },
+    {
+      "name": "Ella",
+      "title": "Assistant",
+      "image": "/assets/images/headshots/ella_headshot.png",
+      "imageAlt": "Headshot of Ella",
+      "instagramHandle": "@elz.hairr",
+      "instagramUrl": "https://instagram.com/elz.hairr",
+      "bio": [
+        "Ella has always loved everything about beauty and glamour, discovering her passion for hair at a young age. What started as a creative hobby quickly turned into a clear career path when she enrolled in her high school's vocational cosmetology program, where she began building her skills and industry knowledge. She is currently finishing her required hours and is excited to grow as a salon assistant while helping clients feel beautiful and confident."
+      ]
+    }
+  ]
+}

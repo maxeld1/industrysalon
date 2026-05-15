@@ -1,0 +1,64 @@
+{
+  "intro": "Thoughtful, personalized services designed around your lifestyle, hair goals, and maintenance preferences.",
+  "pricingNote": "Prices start at each stylist level and may vary based on hair length, thickness, or amount.",
+  "categories": [
+    {
+      "title": "Design",
+      "featured": false,
+      "items": [
+        { "name": "Bang Trim", "price": "Call for pricing" },
+        { "name": "Kids 10 & Under", "price": "$25-$45" },
+        { "name": "Men's Haircut", "price": "$31-$49" },
+        { "name": "Women's Haircut", "price": "$43-$85" }
+      ]
+    },
+    {
+      "title": "Color",
+      "featured": true,
+      "items": [
+        { "name": "Face Framing Foils", "price": "$55" },
+        { "name": "Full Highlights", "price": "$104-$159" },
+        { "name": "Glaze/Overlay", "price": "$38" },
+        { "name": "Partial Highlight", "price": "$84-$118" },
+        { "name": "Single Process", "price": "$53-$83" }
+      ]
+    },
+    {
+      "title": "Hair Treatments",
+      "featured": true,
+      "items": [
+        { "name": "Deep Conditioning Hair Treatment", "price": "$20" },
+        { "name": "Keratin Hair Treatment", "price": "$350" }
+      ]
+    },
+    {
+      "title": "Styling",
+      "featured": false,
+      "items": [
+        { "name": "Blowout", "price": "$35-$55" },
+        { "name": "Formal Styling", "price": "$80-$100" }
+      ]
+    },
+    {
+      "title": "Waxing/Tinting",
+      "featured": true,
+      "items": [
+        { "name": "Brow Tint", "price": "$17" },
+        { "name": "Brow Wax", "price": "$26" },
+        { "name": "Chin Wax", "price": "$15" },
+        { "name": "Lash Tint", "price": "$35" },
+        { "name": "Lip Wax", "price": "$16" }
+      ]
+    },
+    {
+      "title": "Bridal & Consultation",
+      "featured": false,
+      "note": "Please contact us for bridal parties and on-location services.",
+      "items": [
+        { "name": "Bridal Hair Trial", "price": "$150" },
+        { "name": "Day Of Bridal Hair", "price": "$200" },
+        { "name": "Consultation", "price": "Included" }
+      ]
+    }
+  ]
+}
