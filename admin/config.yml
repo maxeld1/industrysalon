@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: maxeld1/industrysalon
+  name: git-gateway
   branch: master
 
 local_backend: true

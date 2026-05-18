@@ -26,6 +26,7 @@ License: Proprietary — Not for redistribution without permission.
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <meta property="og:site_name" content="Industry Salon" />
   <meta property="og:title" content="Industry Salon | Hair Salon in Newtown Square, PA" />
@@ -380,6 +381,17 @@ License: Proprietary — Not for redistribution without permission.
 <script src="js/main.js"></script>
 <script src="js/partials.js"></script>
 <script src="js/content.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
